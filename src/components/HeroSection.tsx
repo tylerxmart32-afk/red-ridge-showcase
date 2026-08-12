@@ -1,6 +1,7 @@
-import { Phone, CalendarCheck, UserRound } from "lucide-react";
+import { Phone, CalendarCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CONTACT } from "@/data/site";
+import headshotAsset from "@/assets/tyler-headshot.png.asset.json";
 
 const STATS = [
   { value: "24/7", label: "Automated coverage" },
