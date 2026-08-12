@@ -68,12 +68,12 @@ export function HeroSection() {
             style={{ background: "var(--gradient-primary)" }}
           />
           <div className="relative overflow-hidden rounded-2xl border border-border bg-surface">
-            <div className="flex aspect-4/5 flex-col items-center justify-center gap-3 bg-accent/40">
-              <UserRound aria-hidden="true" className="size-12! text-muted-foreground" />
-              <p className="px-6 text-center text-xs text-muted-foreground">
-                Professional headshot placeholder
-              </p>
-            </div>
+            <img
+              src={headshotAsset.url}
+              alt="Tyler Martin, Founder of Red Ridge AI"
+              className="aspect-4/5 w-full object-cover"
+              loading="eager"
+            />
             <div className="border-t border-border px-5 py-4">
               <p className="text-sm font-semibold text-foreground">Tyler Martin</p>
               <p className="text-xs text-muted-foreground">Founder, Red Ridge AI</p>
