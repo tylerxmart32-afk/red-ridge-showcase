@@ -30,7 +30,7 @@ export const Route = createFileRoute("/services/$slug")({
       ],
     };
   },
-  component: ServiceDetailPage;
+  component: ServiceDetailPage,
 });
 
 function ServiceDetailPage() {
