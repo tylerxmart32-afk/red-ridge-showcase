@@ -27,6 +27,10 @@
   --radius-3xl: calc(var(--radius) + 12px);
   --radius-4xl: calc(var(--radius) + 16px);
   --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-primary-glow: var(--primary-glow);
+  --font-sans: "Sora", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Sora", ui-sans-serif, system-ui, sans-serif;
   --color-foreground: var(--foreground);
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
@@ -63,7 +67,7 @@
 
 :root {
   --radius: 0.75rem;
-  --background: oklch(0.16 0.014 265);
+  --background: oklch(0.135 0.015 265);
   --foreground: oklch(0.98 0.002 250);
   --card: oklch(0.2 0.014 265);
   --card-foreground: oklch(0.98 0.002 250);
@@ -144,8 +148,18 @@
     border-color: var(--color-border);
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background-color: color-mix(in oklab, var(--color-primary) 40%, transparent);
   }
 }
