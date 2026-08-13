@@ -6,13 +6,43 @@ export function SiteFooter() {
   return (
     <footer className="bg-background">
       <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
-        <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
+        <div className="grid gap-10 md:grid-cols-[1.2fr_1fr_1fr_1fr]">
           <div>
             <BrandMark />
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
               AI infrastructure for growing SMBs. {CONTACT.tagline}.
             </p>
           </div>
+
+          <nav aria-label="Capabilities">
+            <h2 className="text-sm font-semibold text-foreground">Capabilities</h2>
+            <ul className="mt-4 space-y-2">
+              <li>
+                <a
+                  href="#agents"
+                  className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                >
+                  Agents vs Assistants
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#products"
+                  className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                >
+                  Products
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#clients"
+                  className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                >
+                  Clients
+                </a>
+              </li>
+            </ul>
+          </nav>
 
           <nav aria-label="Services">
             <h2 className="text-sm font-semibold text-foreground">Services</h2>

@@ -1,10 +1,10 @@
-import { CalendarCheck, Mail } from "lucide-react";
+import { CalendarCheck, Mail, MessagesSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CONTACT } from "@/data/site";
 
 export function CtaBanner() {
   return (
-    <section id="contact" className="border-b border-border/60">
+    <section id="contact" className="scroll-mt-20 border-b border-border/60 sm:scroll-mt-24">
       <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-24">
         <div
           className="relative overflow-hidden rounded-3xl border border-border px-6 py-14 text-center sm:px-12"
@@ -28,6 +28,12 @@ export function CtaBanner() {
               <a href={CONTACT.requirementsHref}>
                 <Mail aria-hidden="true" />
                 Send Requirements
+              </a>
+            </Button>
+            <Button asChild size="lg" variant="ghost">
+              <a href="#talk">
+                <MessagesSquare aria-hidden="true" />
+                Talk to our AI agent
               </a>
             </Button>
           </div>

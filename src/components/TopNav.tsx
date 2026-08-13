@@ -1,3 +1,4 @@
+import { MessagesSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BrandMark } from "@/components/BrandMark";
 import { CONTACT } from "@/data/site";
@@ -19,16 +20,28 @@ export function TopNav() {
 
         <div className="flex items-center gap-6">
           <div className="hidden items-center gap-6 text-sm text-muted-foreground md:flex">
-            <a href="#services" className="transition-colors hover:text-foreground">
-              Services
+            <a href="#agents" className="transition-colors hover:text-foreground">
+              Agents vs Assistants
+            </a>
+            <a href="#products" className="transition-colors hover:text-foreground">
+              Products
             </a>
             <a href="#clients" className="transition-colors hover:text-foreground">
               Clients
+            </a>
+            <a href="#services" className="transition-colors hover:text-foreground">
+              Services
             </a>
             <a href="#contact" className="transition-colors hover:text-foreground">
               Contact
             </a>
           </div>
+          <Button asChild size="sm" variant="ghost">
+            <a href="#talk">
+              <MessagesSquare aria-hidden="true" />
+              <span className="hidden sm:inline">Talk to our AI agent</span>
+            </a>
+          </Button>
           <Button asChild size="sm">
             <a href={CONTACT.demoHref}>Schedule Demo</a>
           </Button>

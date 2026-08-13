@@ -1,37 +1,37 @@
-import { Phone, CalendarCheck } from "lucide-react";
+import { Phone, CalendarCheck, MessagesSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { CONTACT } from "@/data/site";
+import { CONTACT, HERO, HERO_STATS, CLIENTS } from "@/data/site";
 import headshotAsset from "@/assets/tyler-headshot.png.asset.json";
-
-const STATS = [
-  { value: "24/7", label: "Automated coverage" },
-  { value: "5+", label: "Years shipping AI systems" },
-  { value: "6", label: "Integrated service lines" },
-];
 
 export function HeroSection() {
   return (
     <section id="top" className="relative overflow-hidden border-b border-border/60">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -top-40 left-1/2 h-[28rem] w-[46rem] -translate-x-1/2 rounded-full opacity-25 blur-3xl"
+        className="pointer-events-none absolute inset-0 opacity-60"
+        style={{ background: "var(--gradient-mesh)" }}
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -top-40 left-1/2 h-[28rem] w-[46rem] -translate-x-1/2 rounded-full opacity-25 blur-3xl motion-safe:animate-[ridge-pulse_8s_ease-in-out_infinite]"
         style={{ background: "var(--gradient-primary)" }}
       />
       <div className="relative mx-auto grid max-w-6xl gap-12 px-5 py-20 sm:px-8 sm:py-28 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
         <div>
           <span className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-3 py-1 text-xs font-medium tracking-wide text-muted-foreground uppercase">
             <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-            {CONTACT.tagline}
+            {HERO.eyebrow}
           </span>
 
           <h1 className="mt-6 text-4xl leading-[1.05] font-semibold tracking-tight text-balance sm:text-5xl lg:text-6xl">
-            AI Infrastructure for <span className="text-primary">Growing SMBs</span>
+            {HERO.headline}{" "}
+            <span className="bg-[image:var(--gradient-primary)] bg-clip-text text-transparent">
+              {HERO.headlineAccent}
+            </span>
           </h1>
 
           <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-            We build the systems that recover the revenue you are already losing — missed calls,
-            cold leads, and manual work that never gets done. Deployed in weeks, owned by you, not
-            another pilot project that dies in a slide deck.
+            {HERO.subhead}
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -47,10 +47,35 @@ export function HeroSection() {
                 Call {CONTACT.phone}
               </a>
             </Button>
+            <Button asChild size="lg" variant="ghost">
+              <a href="#talk">
+                <MessagesSquare aria-hidden="true" />
+                Talk to our AI agent
+              </a>
+            </Button>
           </div>
 
-          <dl className="mt-12 grid grid-cols-1 gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-3">
-            {STATS.map((stat) => (
+          <a
+            href="#clients"
+            className="mt-8 flex w-fit items-center gap-3 rounded-full border border-transparent py-1 pr-3 text-sm text-muted-foreground transition-colors hover:border-border hover:text-foreground"
+          >
+            <span className="flex -space-x-2">
+              {CLIENTS.map((client) => (
+                <span
+                  key={client.name}
+                  aria-hidden="true"
+                  className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-background text-[10px] font-semibold text-white opacity-90"
+                  style={{ backgroundColor: client.brandColor }}
+                >
+                  {client.initials}
+                </span>
+              ))}
+            </span>
+            {CLIENTS.length} live client systems →
+          </a>
+
+          <dl className="mt-8 grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-border bg-border lg:grid-cols-4">
+            {HERO_STATS.map((stat) => (
               <div key={stat.label} className="bg-surface px-5 py-4">
                 <dt className="text-xs tracking-wide text-muted-foreground uppercase">
                   {stat.label}
@@ -67,7 +92,7 @@ export function HeroSection() {
             className="absolute -inset-3 rounded-3xl opacity-30 blur-2xl"
             style={{ background: "var(--gradient-primary)" }}
           />
-          <div className="relative overflow-hidden rounded-2xl border border-border bg-surface">
+          <div className="relative overflow-hidden rounded-2xl border border-border bg-surface shadow-[var(--shadow-card)]">
             <img
               src={headshotAsset.url}
               alt="Tyler Martin, Founder of Red Ridge AI"
