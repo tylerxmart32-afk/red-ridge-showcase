@@ -2,14 +2,17 @@ import { createFileRoute } from "@tanstack/react-router";
 
 import { TopNav } from "@/components/TopNav";
 import { HeroSection } from "@/components/HeroSection";
-import { ServicesGrid } from "@/components/ServicesGrid";
+import { AgentsVsAssistants } from "@/components/AgentsVsAssistants";
+import { AiAgentSection } from "@/components/AiAgentSection";
+import { FlagshipProducts } from "@/components/FlagshipProducts";
 import { ClientGrid } from "@/components/ClientGrid";
+import { ServicesGrid } from "@/components/ServicesGrid";
 import { CtaBanner } from "@/components/CtaBanner";
 import { SiteFooter } from "@/components/SiteFooter";
 
-const TITLE = "Red Ridge AI — AI Infrastructure for Growing SMBs";
+const TITLE = "Red Ridge AI — AI Agents & Virtual Assistants for Growing SMBs";
 const DESCRIPTION =
-  "Red Ridge AI builds voice agents, automations, websites, and backend systems that recover revenue for growing small and mid-sized businesses.";
+  "Red Ridge AI builds AI voice agents, autonomous virtual assistants, automations, websites, and backend systems that recover revenue for growing small and mid-sized businesses.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -34,6 +37,16 @@ export const Route = createFileRoute("/")({
           telephone: "+1-732-639-5471",
           email: "tyler@redridgeagency.com",
           areaServed: "US",
+          makesOffer: [
+            {
+              "@type": "Offer",
+              itemOffered: { "@type": "Service", name: "AI Voice & Chat Agents" },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: { "@type": "Service", name: "Virtual Assistants" },
+            },
+          ],
         }),
       },
     ],
@@ -47,8 +60,11 @@ function Index() {
       <TopNav />
       <main>
         <HeroSection />
-        <ServicesGrid />
+        <AgentsVsAssistants />
+        <AiAgentSection />
+        <FlagshipProducts />
         <ClientGrid />
+        <ServicesGrid />
         <CtaBanner />
       </main>
       <SiteFooter />
