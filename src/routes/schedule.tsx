@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft } from "lucide-react";
 
@@ -21,7 +22,17 @@ export const Route = createFileRoute("/schedule")({
   component: SchedulePage,
 });
 
+const EMBED_SCRIPT = "https://links.redridgeagency.com/js/form_embed.js";
+
 function SchedulePage() {
+  useEffect(() => {
+    if (document.querySelector(`script[src="${EMBED_SCRIPT}"]`)) return;
+    const script = document.createElement("script");
+    script.src = EMBED_SCRIPT;
+    script.async = true;
+    document.body.appendChild(script);
+  }, []);
+
   return (
     <div className="min-h-screen bg-background">
       <TopNav />
