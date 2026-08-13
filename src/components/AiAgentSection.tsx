@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { ArrowDownRight } from "lucide-react";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Reveal } from "@/components/Reveal";
 import { AI_AGENT_SECTION } from "@/data/site";
@@ -32,14 +32,15 @@ export function AiAgentSection() {
               <span className="h-3 w-3 animate-ping rounded-full bg-primary opacity-75" />
             </span>
 
-            <p className="mt-4 text-sm font-medium text-foreground">
-              Look for the chat bubble in the corner of this page — that's a live AI agent.
+            <p className="mx-auto mt-4 max-w-md text-base font-medium text-foreground">
+              {AI_AGENT_SECTION.prompt}
             </p>
 
-            <div className="mt-8 flex justify-center">
-              <Button asChild size="lg">
-                <a href="#talk">{AI_AGENT_SECTION.buttonLabel}</a>
-              </Button>
+            <div className="mt-8 flex items-center justify-center gap-2 text-primary motion-safe:animate-bounce">
+              <span className="text-sm font-semibold tracking-wide uppercase">
+                It's waiting in the corner
+              </span>
+              <ArrowDownRight aria-hidden="true" className="size-5!" />
             </div>
           </div>
         </Reveal>

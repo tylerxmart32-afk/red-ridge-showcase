@@ -660,6 +660,7 @@ export const FLAGSHIP_PRODUCTS: FlagshipProduct[] = [
 export const AI_AGENT_SECTION = {
   eyebrow: "Live demo",
   title: "Talk to our AI agent right now",
-  lede: "Don't take our word for what an AI agent can do. The one below is the same kind we build for clients — start a real conversation with it.",
-  buttonLabel: "Start a conversation",
+  lede: "Don't take our word for what an AI agent can do. Put one to work on you.",
+  prompt:
+    "Click the chat bubble in the bottom-right corner and ask it anything — what makes an agent different from a virtual assistant, what we build, or just say hi.",
 } as const;
