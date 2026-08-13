@@ -92,7 +92,7 @@ function SchedulePage() {
         </section>
       </main>
       <SiteFooter />
-      <script src="https://links.redridgeagency.com/js/form_embed.js" />
+      
     </div>
   );
 }
