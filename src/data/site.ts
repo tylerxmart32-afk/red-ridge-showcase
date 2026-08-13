@@ -31,7 +31,7 @@ export const CONTACT = {
   phoneHref: "tel:+17326395471",
   email: "tyler@redridgeagency.com",
   emailHref: "mailto:tyler@redridgeagency.com",
-  demoHref: "mailto:tyler@redridgeagency.com?subject=Schedule%20a%20demo",
+  demoHref: "/schedule",
   requirementsHref: "mailto:tyler@redridgeagency.com?subject=Project%20requirements",
 } as const;
 
