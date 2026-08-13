@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import { MessagesSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BrandMark } from "@/components/BrandMark";
@@ -10,37 +11,37 @@ export function TopNav() {
         aria-label="Primary"
         className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-8"
       >
-        <a
-          href="#top"
+        <Link
+          to="/"
           className="rounded-md transition-opacity hover:opacity-80 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
         >
           <BrandMark />
           <span className="sr-only">Red Ridge AI home</span>
-        </a>
+        </Link>
 
         <div className="flex items-center gap-6">
           <div className="hidden items-center gap-6 text-sm text-muted-foreground md:flex">
-            <a href="#agents" className="transition-colors hover:text-foreground">
+            <Link to="/" hash="agents" className="transition-colors hover:text-foreground">
               Agents vs Assistants
-            </a>
-            <a href="#products" className="transition-colors hover:text-foreground">
+            </Link>
+            <Link to="/" hash="products" className="transition-colors hover:text-foreground">
               Products
-            </a>
-            <a href="#clients" className="transition-colors hover:text-foreground">
+            </Link>
+            <Link to="/" hash="clients" className="transition-colors hover:text-foreground">
               Clients
-            </a>
-            <a href="#services" className="transition-colors hover:text-foreground">
+            </Link>
+            <Link to="/" hash="services" className="transition-colors hover:text-foreground">
               Services
-            </a>
-            <a href="#contact" className="transition-colors hover:text-foreground">
+            </Link>
+            <Link to="/" hash="contact" className="transition-colors hover:text-foreground">
               Contact
-            </a>
+            </Link>
           </div>
           <Button asChild size="sm" variant="ghost">
-            <a href="#talk">
+            <Link to="/" hash="talk">
               <MessagesSquare aria-hidden="true" />
               <span className="hidden sm:inline">Talk to our AI agent</span>
-            </a>
+            </Link>
           </Button>
           <Button asChild size="sm">
             <a href={CONTACT.demoHref}>Schedule Demo</a>

@@ -1,14 +1,12 @@
-import { PhoneCall } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Reveal } from "@/components/Reveal";
-import { AiAgentWidget } from "@/components/AiAgentWidget";
-import { AI_AGENT_WIDGET } from "@/data/ai-agent-widget";
-import { AI_AGENT_SECTION, CONTACT } from "@/data/site";
+import { AI_AGENT_SECTION } from "@/data/site";
 
+// The live agent itself is the global ChatWidget mounted in __root.tsx --
+// this section just pulls the visitor's attention to it right after the
+// AI-agents-vs-virtual-assistants claim lands.
 export function AiAgentSection() {
-  const widgetConfigured = AI_AGENT_WIDGET.embedSnippet.trim().length > 0;
-
   return (
     <section
       id="talk"
@@ -35,31 +33,16 @@ export function AiAgentSection() {
             </span>
 
             <p className="mt-4 text-sm font-medium text-foreground">
-              {widgetConfigured
-                ? "Look for the chat bubble in the corner of this page — that's a live AI agent."
-                : AI_AGENT_SECTION.fallbackNote}
+              Look for the chat bubble in the corner of this page — that's a live AI agent.
             </p>
 
-            <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+            <div className="mt-8 flex justify-center">
               <Button asChild size="lg">
-                <a href={widgetConfigured ? "#talk" : CONTACT.demoHref}>
-                  {widgetConfigured ? AI_AGENT_SECTION.buttonLabel : "Schedule a live demo instead"}
-                </a>
+                <a href="#talk">{AI_AGENT_SECTION.buttonLabel}</a>
               </Button>
-              {CONTACT.agentPhoneHref ? (
-                <Button asChild size="lg" variant="outline">
-                  <a href={CONTACT.agentPhoneHref}>
-                    <PhoneCall aria-hidden="true" />
-                    {AI_AGENT_SECTION.callLabel}
-                  </a>
-                </Button>
-              ) : null}
             </div>
           </div>
         </Reveal>
-
-        {/* GHL widget mounts here (or floats in the corner) -- see src/data/ai-agent-widget.ts */}
-        <AiAgentWidget />
       </div>
     </section>
   );
