@@ -22,7 +22,7 @@ export const Route = createFileRoute("/schedule")({
   component: SchedulePage,
 });
 
-const EMBED_SCRIPT = "https://links.redridgeagency.com/js/form_embed.js";
+const EMBED_SCRIPT = "https://api.leadconnectorhq.com/js/form_embed.js";
 
 function SchedulePage() {
   useEffect(() => {
@@ -71,7 +71,7 @@ function SchedulePage() {
           <div className="mx-auto max-w-3xl px-5 py-16 sm:px-8 sm:py-20">
             <div className="overflow-hidden rounded-3xl border border-border bg-surface p-2 shadow-[var(--shadow-card)] sm:p-4">
               <iframe
-                src="https://links.redridgeagency.com/widget/form/6JMkcW9vjAAjEQ96GycS"
+                src="https://api.leadconnectorhq.com/widget/form/6JMkcW9vjAAjEQ96GycS"
                 style={{ width: "100%", height: "1084px", border: "none", borderRadius: "8px" }}
                 id="inline-6JMkcW9vjAAjEQ96GycS"
                 data-layout="{'id':'INLINE'}"
