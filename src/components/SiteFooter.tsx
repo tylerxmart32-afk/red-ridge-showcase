@@ -83,6 +83,27 @@ export function SiteFooter() {
               </li>
               <li className="text-sm text-muted-foreground">New Jersey, United States</li>
             </ul>
+            <h2 className="mt-8 text-sm font-semibold text-foreground">Our Network</h2>
+            <ul className="mt-4 space-y-2">
+              <li>
+                <a
+                  href={CONTACT.website}
+                  className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                >
+                  Main site — redridgeai.com
+                </a>
+              </li>
+              <li>
+                <a
+                  href={CONTACT.connectHelm}
+                  target="_blank"
+                  rel="noopener"
+                  className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                >
+                  Connect Helm (with Watchman IT)
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
 
@@ -90,7 +111,13 @@ export function SiteFooter() {
           <p>
             &copy; {new Date().getFullYear()} {CONTACT.company}. All rights reserved.
           </p>
-          <p>Built and operated in-house.</p>
+          <p>
+            Built and operated in-house. This is the client showcase for{" "}
+            <a href={CONTACT.website} className="transition-colors hover:text-primary">
+              redridgeai.com
+            </a>
+            .
+          </p>
         </div>
       </div>
     </footer>
