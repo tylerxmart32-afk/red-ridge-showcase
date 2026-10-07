@@ -35,7 +35,7 @@ export const Route = createFileRoute("/")({
           name: "Red Ridge AI",
           description: DESCRIPTION,
           telephone: "+1-732-639-5471",
-          email: "tyler@redridgeagency.com",
+          email: "info@redridgeai.com",
           areaServed: "US",
           makesOffer: [
             {
