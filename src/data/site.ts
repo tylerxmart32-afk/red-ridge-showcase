@@ -29,12 +29,12 @@ export const CONTACT = {
   tagline: "Revenue recovery, not tech experiments",
   phone: "(732) 639-5471",
   phoneHref: "tel:+17326395471",
-  email: "tyler@redridgeagency.com",
-  emailHref: "mailto:tyler@redridgeagency.com",
+  email: "info@redridgeai.com",
+  emailHref: "mailto:info@redridgeai.com",
   website: "https://redridgeai.com",
   connectHelm: "https://connecthelm.com",
   demoHref: "/schedule",
-  requirementsHref: "mailto:tyler@redridgeagency.com?subject=Project%20requirements",
+  requirementsHref: "mailto:info@redridgeai.com?subject=Project%20requirements",
 } as const;
 
 export const HERO = {

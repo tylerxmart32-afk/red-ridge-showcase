@@ -40,7 +40,7 @@ Content to Include:
 	•	Tagline: “Revenue recovery, not tech experiments”
 	•	Company: Red Ridge AI 
 	•	Phone: (732) 639-5471
-	•	Email: tyler@redridgeagency.com
+	•	Email: info@redridgeai.com
 
 This project was built with [Lovable](https://lovable.dev).
 
