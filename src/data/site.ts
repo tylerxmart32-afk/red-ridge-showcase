@@ -427,6 +427,15 @@ export const CLIENTS: Client[] = [
     url: "https://automotivecreations.lovable.app",
   },
   {
+    name: "WaxFactory",
+    initials: "WF",
+    brandColor: "#8B6A1E",
+    industry: "Car care products",
+    outcome: "Dated site with a closed store rebuilt as a premium storefront, with new labels and studio photos for all 11 formulas.",
+    services: ["Website Development", "Product Photography", "SEO"],
+    url: "https://waxfactory.lovable.app",
+  },
+  {
     name: "Sharpen it",
     initials: "SI",
     brandColor: "#7C3AED",
