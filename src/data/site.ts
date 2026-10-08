@@ -48,7 +48,7 @@ export const HERO = {
 export const HERO_STATS: { value: string; label: string }[] = [
   { value: "24/7", label: "Automated coverage" },
   { value: "5+", label: "Years shipping AI systems" },
-  { value: "6", label: "Live client systems" },
+  { value: "7", label: "Live client systems" }, // keep equal to CLIENTS.length (the hero strip counts CLIENTS)
   { value: "4", label: "Flagship platforms built" },
 ];
 
