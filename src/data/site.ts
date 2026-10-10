@@ -35,8 +35,27 @@ export const CONTACT = {
   connectHelm: "https://connecthelm.com",
   watchmanIt: "https://watchmanit.com",
   demoHref: "/schedule",
-  requirementsHref: "mailto:info@redridgeai.com?subject=Project%20requirements",
+  /** Project requirements go through the same intake form (-> Red Ridge CRM), not a mailto. */
+  requirementsHref: "/schedule",
 } as const;
+
+/** Industry picker on the intake form (same wording family as redridgeai.com). */
+export const INDUSTRIES = [
+  "HVAC",
+  "Plumbing",
+  "Electrical",
+  "Landscaping & Lawn Care",
+  "Cleaning Services",
+  "Roofing & Contracting",
+  "Auto Repair & Detailing",
+  "Dental & Medical",
+  "Legal",
+  "Real Estate",
+  "Restaurants & Food",
+  "Transportation & Logistics",
+  "Professional Services",
+  "Other",
+] as const;
 
 /** This domain is the portfolio. Services, plans and pricing live on the main site. */
 export const PORTFOLIO = {

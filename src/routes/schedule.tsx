@@ -1,9 +1,9 @@
-import { useEffect } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft } from "lucide-react";
 
 import { TopNav } from "@/components/TopNav";
 import { SiteFooter } from "@/components/SiteFooter";
+import { LeadForm } from "@/components/LeadForm";
 
 const TITLE = "Schedule a Demo — Red Ridge AI";
 const DESCRIPTION =
@@ -22,17 +22,7 @@ export const Route = createFileRoute("/schedule")({
   component: SchedulePage,
 });
 
-const EMBED_SCRIPT = "https://api.leadconnectorhq.com/js/form_embed.js";
-
 function SchedulePage() {
-  useEffect(() => {
-    if (document.querySelector(`script[src="${EMBED_SCRIPT}"]`)) return;
-    const script = document.createElement("script");
-    script.src = EMBED_SCRIPT;
-    script.async = true;
-    document.body.appendChild(script);
-  }, []);
-
   return (
     <div className="min-h-screen bg-background">
       <TopNav />
@@ -60,8 +50,9 @@ function SchedulePage() {
                 Schedule your demo
               </h1>
               <p className="mt-5 text-base leading-relaxed text-muted-foreground sm:text-lg">
-                Tell us a bit about your business and grab a time. We will walk through exactly what
-                an agent or assistant looks like running inside it.
+                Tell us a bit about your business and when works for you. We will walk through
+                exactly what an agent or assistant looks like running inside it. Your request goes
+                straight into our CRM, so a real person follows up, not a queue.
               </p>
             </div>
           </div>
@@ -69,30 +60,11 @@ function SchedulePage() {
 
         <section>
           <div className="mx-auto max-w-3xl px-5 py-16 sm:px-8 sm:py-20">
-            <div className="overflow-hidden rounded-3xl border border-border bg-surface p-2 shadow-[var(--shadow-card)] sm:p-4">
-              <iframe
-                src="https://api.leadconnectorhq.com/widget/form/6JMkcW9vjAAjEQ96GycS"
-                style={{ width: "100%", height: "1084px", border: "none", borderRadius: "8px" }}
-                id="inline-6JMkcW9vjAAjEQ96GycS"
-                data-layout="{'id':'INLINE'}"
-                data-trigger-type="alwaysShow"
-                data-trigger-value=""
-                data-activation-type="alwaysActivated"
-                data-activation-value=""
-                data-deactivation-type="neverDeactivate"
-                data-deactivation-value=""
-                data-form-name="LIVE DEMO FORM"
-                data-height="1084"
-                data-layout-iframe-id="inline-6JMkcW9vjAAjEQ96GycS"
-                data-form-id="6JMkcW9vjAAjEQ96GycS"
-                title="LIVE DEMO FORM"
-              />
-            </div>
+            <LeadForm intent="demo" />
           </div>
         </section>
       </main>
       <SiteFooter />
-      
     </div>
   );
 }
