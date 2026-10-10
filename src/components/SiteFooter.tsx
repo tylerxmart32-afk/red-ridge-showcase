@@ -10,7 +10,12 @@ export function SiteFooter() {
           <div>
             <BrandMark />
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
-              AI infrastructure for growing SMBs. {CONTACT.tagline}.
+              This is the Red Ridge AI client portfolio. Services, plans and pricing live on our
+              main site,{" "}
+              <a href={CONTACT.website} className="text-foreground transition-colors hover:text-primary">
+                redridgeai.com
+              </a>
+              . {CONTACT.tagline}.
             </p>
           </div>
 
@@ -100,7 +105,17 @@ export function SiteFooter() {
                   rel="noopener"
                   className="text-sm text-muted-foreground transition-colors hover:text-primary"
                 >
-                  Connect Helm (with Watchman IT)
+                  Connect Helm — our partnership with Watchman IT
+                </a>
+              </li>
+              <li>
+                <a
+                  href={CONTACT.watchmanIt}
+                  target="_blank"
+                  rel="noopener"
+                  className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                >
+                  Watchman IT
                 </a>
               </li>
             </ul>

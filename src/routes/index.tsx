@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 
+import { PortfolioBanner } from "@/components/PortfolioBanner";
 import { TopNav } from "@/components/TopNav";
+import { PartnershipSection } from "@/components/PartnershipSection";
 import { HeroSection } from "@/components/HeroSection";
 import { AgentsVsAssistants } from "@/components/AgentsVsAssistants";
 import { AiAgentSection } from "@/components/AiAgentSection";
@@ -10,9 +12,11 @@ import { ServicesGrid } from "@/components/ServicesGrid";
 import { CtaBanner } from "@/components/CtaBanner";
 import { SiteFooter } from "@/components/SiteFooter";
 
-const TITLE = "Red Ridge AI — AI Agents & Virtual Assistants for Growing SMBs";
+const TITLE = "Red Ridge AI Portfolio — Client Work, Platforms & the Connect Helm Partnership";
 const DESCRIPTION =
-  "Red Ridge AI builds AI voice agents, autonomous virtual assistants, automations, websites, and backend systems that recover revenue for growing small and mid-sized businesses.";
+  "The portfolio of Red Ridge AI (main site: redridgeai.com): live AI voice agents, virtual assistants, platforms and websites built for NJ businesses, plus Connect Helm, our partnership with Watchman IT.";
+const MAIN_SITE = "https://www.redridgeai.com";
+const MAIN_ORG_ID = `${MAIN_SITE}/#organization`;
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -31,20 +35,40 @@ export const Route = createFileRoute("/")({
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "ProfessionalService",
-          name: "Red Ridge AI",
-          description: DESCRIPTION,
-          telephone: "+1-732-639-5471",
-          email: "info@redridgeai.com",
-          areaServed: "US",
-          makesOffer: [
+          "@graph": [
             {
-              "@type": "Offer",
-              itemOffered: { "@type": "Service", name: "AI Voice & Chat Agents" },
+              "@type": "CollectionPage",
+              "@id": "https://redridgeagency.com/#portfolio",
+              name: "Red Ridge AI Portfolio",
+              description: DESCRIPTION,
+              url: "https://redridgeagency.com/",
+              about: { "@id": MAIN_ORG_ID },
+              isPartOf: { "@type": "WebSite", name: "Red Ridge AI", url: `${MAIN_SITE}/` },
+              mainEntity: { "@id": MAIN_ORG_ID },
             },
             {
-              "@type": "Offer",
-              itemOffered: { "@type": "Service", name: "Virtual Assistants" },
+              "@type": ["LocalBusiness", "ProfessionalService"],
+              "@id": MAIN_ORG_ID,
+              name: "Red Ridge AI",
+              url: `${MAIN_SITE}/`,
+              telephone: "+17326395471",
+              email: "info@redridgeai.com",
+              areaServed: { "@type": "State", name: "New Jersey" },
+              address: { "@type": "PostalAddress", addressLocality: "Branchburg", addressRegion: "NJ", addressCountry: "US" },
+              sameAs: ["https://redridgeagency.com", "https://connecthelm.com"],
+              makesOffer: [
+                { "@type": "Offer", itemOffered: { "@type": "Service", name: "AI Voice & Chat Agents" } },
+                { "@type": "Offer", itemOffered: { "@type": "Service", name: "Virtual Assistants" } },
+              ],
+            },
+            {
+              "@type": "Organization",
+              "@id": "https://connecthelm.com/#organization",
+              name: "Connect Helm Technology",
+              url: "https://connecthelm.com",
+              description: "Intelligent communications and secure infrastructure for New Jersey businesses, launched by Red Ridge AI and Watchman IT.",
+              address: { "@type": "PostalAddress", addressLocality: "Branchburg", addressRegion: "NJ", addressCountry: "US" },
+              founder: [{ "@id": MAIN_ORG_ID }, { "@type": "Organization", name: "Watchman IT", url: "https://watchmanit.com" }],
             },
           ],
         }),
@@ -57,9 +81,11 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <div className="min-h-screen bg-background">
+      <PortfolioBanner />
       <TopNav />
       <main>
         <HeroSection />
+        <PartnershipSection />
         <AgentsVsAssistants />
         <AiAgentSection />
         <FlagshipProducts />

@@ -31,18 +31,71 @@ export const CONTACT = {
   phoneHref: "tel:+17326395471",
   email: "info@redridgeai.com",
   emailHref: "mailto:info@redridgeai.com",
-  website: "https://redridgeai.com",
+  website: "https://www.redridgeai.com",
   connectHelm: "https://connecthelm.com",
+  watchmanIt: "https://watchmanit.com",
   demoHref: "/schedule",
   requirementsHref: "mailto:info@redridgeai.com?subject=Project%20requirements",
 } as const;
 
+/** This domain is the portfolio. Services, plans and pricing live on the main site. */
+export const PORTFOLIO = {
+  notice: "You are viewing the Red Ridge AI portfolio.",
+  mainSiteLabel: "Our main site is redridgeai.com",
+  mainSiteHref: CONTACT.website,
+} as const;
+
 export const HERO = {
-  eyebrow: CONTACT.tagline,
-  headline: "AI Infrastructure for",
+  eyebrow: "Client portfolio",
+  headline: "The AI Systems We Ship for",
   headlineAccent: "Growing SMBs",
   subhead:
-    "We build the systems that recover the revenue you are already losing — missed calls, cold leads, and manual work that never gets done. Deployed in weeks, owned by you, not another pilot project that dies in a slide deck.",
+    "This is the Red Ridge AI portfolio: the live voice agents, virtual assistants, platforms and websites we have built for real clients. For services, plans and pricing, or to start a project, head to our main site at redridgeai.com.",
+  mainSiteCta: "Visit redridgeai.com",
+} as const;
+
+/** Red Ridge AI x Watchman IT -> Connect Helm (connecthelm.com). */
+export const PARTNERSHIP = {
+  eyebrow: "Partnership",
+  title: "Red Ridge AI + Watchman IT launched Connect Helm",
+  lede: "Two New Jersey firms, one connected stack. Red Ridge AI builds the agents and automation; Watchman IT runs the infrastructure and security. Together we launched Connect Helm Technology so a business can get its phones, AI receptionist, CRM and IT from one team that actually talks to each other.",
+  partners: [
+    {
+      name: "Red Ridge AI",
+      role: "AI agents + automation",
+      href: CONTACT.website,
+      brings: [
+        "AI voice and chat agents that answer every call",
+        "Virtual assistants that run the CRM and follow-up",
+        "Workflow automation, websites and backend systems",
+      ],
+    },
+    {
+      name: "Watchman IT",
+      role: "Infrastructure + security",
+      href: CONTACT.watchmanIt,
+      brings: [
+        "Managed IT and cloud infrastructure",
+        "Cybersecurity, monitoring and compliance",
+        "Business phone systems and networking",
+      ],
+    },
+  ],
+  result: {
+    name: "Connect Helm Technology",
+    role: "The result",
+    tagline: "Technology made simple. Intelligent communications, secure infrastructure.",
+    delivers: [
+      "Agentic voice agents on your business line, 24/7",
+      "Cloud phones, softphones and smart call routing",
+      "CRM integrations and workflow automation",
+      "Managed IT and cybersecurity under the same roof",
+    ],
+  },
+  ctaLabel: "Explore Connect Helm",
+  ctaHref: CONTACT.connectHelm,
+  footnote:
+    "Connect Helm serves New Jersey businesses from Branchburg, NJ. Red Ridge AI remains the builder behind the AI layer; projects shown on this page were delivered by Red Ridge AI directly or through Connect Helm.",
 } as const;
 
 export const HERO_STATS: { value: string; label: string }[] = [

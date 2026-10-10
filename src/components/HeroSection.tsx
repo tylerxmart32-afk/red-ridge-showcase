@@ -1,4 +1,4 @@
-import { Phone, CalendarCheck, MessagesSquare } from "lucide-react";
+import { Phone, ArrowUpRight, MessagesSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CONTACT, HERO, HERO_STATS, CLIENTS } from "@/data/site";
 import headshotAsset from "@/assets/tyler-headshot.png.asset.json";
@@ -36,9 +36,9 @@ export function HeroSection() {
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Button asChild size="lg">
-              <a href={CONTACT.demoHref}>
-                <CalendarCheck aria-hidden="true" />
-                Schedule Demo
+              <a href={CONTACT.website}>
+                {HERO.mainSiteCta}
+                <ArrowUpRight aria-hidden="true" />
               </a>
             </Button>
             <Button asChild size="lg" variant="outline">

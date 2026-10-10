@@ -21,6 +21,9 @@ export function TopNav() {
 
         <div className="flex items-center gap-6">
           <div className="hidden items-center gap-6 text-sm text-muted-foreground md:flex">
+            <Link to="/" hash="partnership" className="transition-colors hover:text-foreground">
+              Connect Helm
+            </Link>
             <Link to="/" hash="agents" className="transition-colors hover:text-foreground">
               Agents vs Assistants
             </Link>
@@ -44,7 +47,7 @@ export function TopNav() {
             </Link>
           </Button>
           <Button asChild size="sm">
-            <a href={CONTACT.demoHref}>Schedule Demo</a>
+            <a href={CONTACT.website}>Main site</a>
           </Button>
         </div>
       </nav>

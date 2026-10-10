@@ -1,4 +1,4 @@
-import { CalendarCheck, Mail, MessagesSquare } from "lucide-react";
+import { ArrowUpRight, CalendarCheck, MessagesSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CONTACT } from "@/data/site";
 
@@ -11,23 +11,24 @@ export function CtaBanner() {
           style={{ background: "var(--gradient-cta)" }}
         >
           <h2 className="text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
-            Ready to Deploy?
+            Want one of these for your business?
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-muted-foreground">
-            Bring us the bottleneck. We will map the fix, scope the build, and tell you what it is
-            worth before you commit a dollar.
+            Everything on this page was built by Red Ridge AI. Services, plans and pricing live on
+            our main site, and a discovery call is the fastest way to find out what your bottleneck
+            is worth.
           </p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
             <Button asChild size="lg">
-              <a href={CONTACT.demoHref}>
-                <CalendarCheck aria-hidden="true" />
-                Schedule Discovery
+              <a href={CONTACT.website}>
+                Start a project at redridgeai.com
+                <ArrowUpRight aria-hidden="true" />
               </a>
             </Button>
             <Button asChild size="lg" variant="outline">
-              <a href={CONTACT.requirementsHref}>
-                <Mail aria-hidden="true" />
-                Send Requirements
+              <a href={CONTACT.demoHref}>
+                <CalendarCheck aria-hidden="true" />
+                Schedule Discovery
               </a>
             </Button>
             <Button asChild size="lg" variant="ghost">
