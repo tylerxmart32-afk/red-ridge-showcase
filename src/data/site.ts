@@ -27,8 +27,8 @@ import {
 export const CONTACT = {
   company: "Red Ridge AI",
   tagline: "Revenue recovery, not tech experiments",
-  phone: "(732) 639-5471",
-  phoneHref: "tel:+17326395471",
+  phone: "(732) 506-2323",
+  phoneHref: "tel:+17325062323",
   email: "info@redridgeai.com",
   emailHref: "mailto:info@redridgeai.com",
   website: "https://www.redridgeai.com",
