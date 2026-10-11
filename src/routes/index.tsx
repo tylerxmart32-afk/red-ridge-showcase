@@ -51,7 +51,7 @@ export const Route = createFileRoute("/")({
               "@id": MAIN_ORG_ID,
               name: "Red Ridge AI",
               url: `${MAIN_SITE}/`,
-              telephone: "+17326395471",
+              telephone: "+17325062323",
               email: "info@redridgeai.com",
               areaServed: { "@type": "State", name: "New Jersey" },
               address: { "@type": "PostalAddress", addressLocality: "Branchburg", addressRegion: "NJ", addressCountry: "US" },

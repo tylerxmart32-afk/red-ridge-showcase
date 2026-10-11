@@ -39,7 +39,7 @@ Content to Include:
 	•	Headline: “AI Infrastructure for Growing SMBs”
 	•	Tagline: “Revenue recovery, not tech experiments”
 	•	Company: Red Ridge AI 
-	•	Phone: (732) 639-5471
+	•	Phone: (732) 506-2323
 	•	Email: info@redridgeai.com
 
 This project was built with [Lovable](https://lovable.dev).
