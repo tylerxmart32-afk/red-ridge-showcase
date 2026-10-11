@@ -21,6 +21,9 @@ import {
   Bot,
   ShieldCheck,
   Sparkles,
+  SearchCheck,
+  LockKeyhole,
+  Crosshair,
   type LucideIcon,
 } from "lucide-react";
 
@@ -738,6 +741,90 @@ export const FLAGSHIP_PRODUCTS: FlagshipProduct[] = [
   },
 ];
 
+// ── One-time audits (rendered as a group under Products) ─────────────────────
+
+/** Ordering lives on the main site; this portfolio only links to it. */
+export const AUDITS_ORDER_URL = "https://www.redridgeai.com/audits";
+
+export const AUDITS_GROUP = {
+  eyebrow: "One-time audits — no contract",
+  title: "Start with an audit",
+  lede: "Fixed-scope work from Red Ridge AI: one engagement, a written report, and a walkthrough. No retainer required. Ordering lives on redridgeai.com.",
+} as const;
+
+export interface OneTimeAudit {
+  id: string;
+  name: string;
+  category: string;
+  summary: string;
+  includes: string[];
+  /** Shown as the card badge. */
+  turnaround: string;
+  priceLine: string;
+  ctaLabel: string;
+  icon: LucideIcon;
+}
+
+export const ONE_TIME_AUDITS: OneTimeAudit[] = [
+  {
+    id: "seo-audit",
+    name: "SEO Audit",
+    category: "Search visibility",
+    summary:
+      "Why customers find a competitor instead of you, and the fixes in the order that matters.",
+    includes: [
+      "Full-site crawl: titles, descriptions, headings, broken links, images, mobile, structured data",
+      "Google Business Profile and map-pack review against the competitors who outrank you",
+      "AI-search check: how Google's AI answers, ChatGPT and Gemini describe your business",
+      "Listings check across Google, Apple Maps, Bing, Yelp and Facebook",
+      "A 90-day action plan",
+      "30-minute walkthrough call",
+    ],
+    turnaround: "Report in 5 business days",
+    priceLine: "Quoted when you order",
+    ctaLabel: "Order on redridgeai.com",
+    icon: SearchCheck,
+  },
+  {
+    id: "security-audit",
+    name: "Security Audit",
+    category: "Outside-in security review",
+    summary:
+      "What an attacker can see about your business from the outside, and how to close each gap.",
+    includes: [
+      "SSL/HTTPS and security headers",
+      "Email spoofing protection: SPF, DKIM, DMARC",
+      "Website platform and plugin exposure",
+      "Login and admin page exposure, checked only with your written OK",
+      "Plain-English risk per finding, mapped to NIST 800-53",
+      "Remediation roadmap and a re-check",
+      "30-minute walkthrough call",
+    ],
+    turnaround: "Report in 5 business days",
+    priceLine: "Quoted when you order",
+    ctaLabel: "Order on redridgeai.com",
+    icon: LockKeyhole,
+  },
+  {
+    id: "penetration-test",
+    name: "Penetration Test",
+    category: "Authorized hands-on testing",
+    summary:
+      "An authorized, hands-on attempt to break in, so you find the way in before someone else does.",
+    includes: [
+      "Scoping call and signed rules of engagement first",
+      "External perimeter and web application testing",
+      "Controlled exploitation, strictly within scope",
+      "Executive + technical report with evidence",
+      "Remediation guidance and a re-test",
+    ],
+    turnaround: "Typically 1–2 weeks after scoping",
+    priceLine: "Scoped on a call",
+    ctaLabel: "Start scoping on redridgeai.com",
+    icon: Crosshair,
+  },
+];
+
 // ── Talk to our AI agent ─────────────────────────────────────────────────────
 
 export const AI_AGENT_SECTION = {
@@ -745,5 +832,5 @@ export const AI_AGENT_SECTION = {
   title: "Talk to our AI agent right now",
   lede: "Don't take our word for what an AI agent can do. Put one to work on you.",
   prompt:
-    "Click the chat bubble in the bottom-right corner and ask it anything — what makes an agent different from a virtual assistant, what we build, or just say hi.",
+    "Open Jasmine, our AI assistant, in the bottom-right corner — talk or type — and ask her anything: what makes an agent different from a virtual assistant, what we build, or just say hi.",
 } as const;

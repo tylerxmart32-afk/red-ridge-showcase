@@ -1,27 +1,13 @@
-import { useEffect } from "react";
+import { TelnyxAgentWidget } from "@/components/TelnyxAgentWidget";
 
-const WIDGET_ID = "6a7cf4ba187766e8c20694ea";
-const LOADER_URL = "https://widgets.leadconnectorhq.com/loader.js";
-const RESOURCES_URL = "https://widgets.leadconnectorhq.com/chat-widget/loader.js";
+/** Jasmine, Red Ridge AI's website assistant (Telnyx AI agent). */
+const JASMINE_AGENT_ID = "assistant-4102e987-8ede-4300-9491-d0e5baf40317";
 
+/**
+ * The site-wide corner assistant, mounted once in __root.tsx. This is the only
+ * chat widget on the site (it replaced the GoHighLevel chat widget), so two
+ * corner widgets can never stack.
+ */
 export function ChatWidget() {
-  useEffect(() => {
-    if (typeof document === "undefined") return;
-    if (document.getElementById(WIDGET_ID)) return;
-
-    const script = document.createElement("script");
-    script.id = WIDGET_ID;
-    script.src = LOADER_URL;
-    script.async = true;
-    script.setAttribute("data-resources-url", RESOURCES_URL);
-    script.setAttribute("data-widget-id", WIDGET_ID);
-
-    document.body.appendChild(script);
-
-    return () => {
-      script.remove();
-    };
-  }, []);
-
-  return null;
+  return <TelnyxAgentWidget agentId={JASMINE_AGENT_ID} />;
 }

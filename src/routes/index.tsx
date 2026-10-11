@@ -11,6 +11,7 @@ import { ClientGrid } from "@/components/ClientGrid";
 import { ServicesGrid } from "@/components/ServicesGrid";
 import { CtaBanner } from "@/components/CtaBanner";
 import { SiteFooter } from "@/components/SiteFooter";
+import { AUDITS_ORDER_URL, ONE_TIME_AUDITS } from "@/data/site";
 
 const TITLE = "Red Ridge AI Portfolio — Client Work, Platforms & the Connect Helm Partnership";
 const DESCRIPTION =
@@ -70,6 +71,17 @@ export const Route = createFileRoute("/")({
               address: { "@type": "PostalAddress", addressLocality: "Branchburg", addressRegion: "NJ", addressCountry: "US" },
               founder: [{ "@id": MAIN_ORG_ID }, { "@type": "Organization", name: "Watchman IT", url: "https://watchmanit.com" }],
             },
+            // One-time audits: listed as Services only (no Offer/price -- quoted at order).
+            ...ONE_TIME_AUDITS.map((audit) => ({
+              "@type": "Service",
+              "@id": `${MAIN_SITE}/audits#${audit.id}`,
+              name: audit.name,
+              serviceType: audit.name,
+              description: audit.summary,
+              url: AUDITS_ORDER_URL,
+              provider: { "@id": MAIN_ORG_ID },
+              areaServed: { "@type": "State", name: "New Jersey" },
+            })),
           ],
         }),
       },
