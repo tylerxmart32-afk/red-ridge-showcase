@@ -649,7 +649,7 @@ export const DEMOS: DemoBuild[] = [
     location: "Freehold, NJ",
     description:
       "Turkish and Greek restaurant site with a full menu plus catering and private-party pages.",
-    url: "https://aegean-table.lovable.app",
+    url: "https://aegean-table-freehold.lovable.app",
     builtBy: "Connect Helm",
   },
   {
@@ -796,7 +796,7 @@ export const DEMOS: DemoBuild[] = [
     location: "Neptune, NJ",
     description:
       "Spa-feel dental site covering general, restorative, and cosmetic care, with a Spanish-speaking team callout.",
-    url: "https://radiant-smile-dental.lovable.app",
+    url: "https://radiant-smile-dental-studio.lovable.app",
     builtBy: "Connect Helm",
   },
   {
