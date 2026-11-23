@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import { Phone, Mail } from "lucide-react";
 import { BrandMark } from "@/components/BrandMark";
 import { CONTACT, SERVICES } from "@/data/site";
@@ -23,28 +24,31 @@ export function SiteFooter() {
             <h2 className="text-sm font-semibold text-foreground">Capabilities</h2>
             <ul className="mt-4 space-y-2">
               <li>
-                <a
-                  href="#agents"
+                <Link
+                  to="/"
+                  hash="agents"
                   className="text-sm text-muted-foreground transition-colors hover:text-primary"
                 >
                   Agents vs Assistants
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#products"
+                <Link
+                  to="/"
+                  hash="products"
                   className="text-sm text-muted-foreground transition-colors hover:text-primary"
                 >
                   Products
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#clients"
+                <Link
+                  to="/"
+                  hash="clients"
                   className="text-sm text-muted-foreground transition-colors hover:text-primary"
                 >
                   Clients
-                </a>
+                </Link>
               </li>
             </ul>
           </nav>
@@ -54,12 +58,13 @@ export function SiteFooter() {
             <ul className="mt-4 space-y-2">
               {SERVICES.map((service) => (
                 <li key={service.title}>
-                  <a
-                    href="#services"
+                  <Link
+                    to="/services/$slug"
+                    params={{ slug: service.slug }}
                     className="text-sm text-muted-foreground transition-colors hover:text-primary"
                   >
                     {service.title}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
