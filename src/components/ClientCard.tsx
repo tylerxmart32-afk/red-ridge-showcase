@@ -10,6 +10,7 @@ export function ClientCard({
   outcome,
   services,
   url,
+  related,
 }: Client) {
   return (
     <a
@@ -40,6 +41,11 @@ export function ClientCard({
       <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{outcome}</p>
 
       <ul className="mt-4 flex flex-wrap gap-2">
+        {related && (
+          <li className="rounded-full border border-primary/40 px-2.5 py-1 text-xs text-foreground">
+            Related party
+          </li>
+        )}
         {services.map((service) => (
           <li
             key={service}

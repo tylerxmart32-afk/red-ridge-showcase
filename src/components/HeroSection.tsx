@@ -1,7 +1,6 @@
 import { Phone, CalendarCheck, MessagesSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CONTACT, HERO, HERO_STATS, CLIENTS } from "@/data/site";
-import headshotAsset from "@/assets/tyler-headshot.png.asset.json";
 
 export function HeroSection() {
   return (
@@ -94,10 +93,15 @@ export function HeroSection() {
           />
           <div className="relative overflow-hidden rounded-2xl border border-border bg-surface shadow-[var(--shadow-card)]">
             <img
-              src={headshotAsset.url}
+              src="/images/tyler-headshot-800.webp"
+              srcSet="/images/tyler-headshot-480.webp 480w, /images/tyler-headshot-800.webp 800w"
+              sizes="(min-width: 640px) 384px, 100vw"
+              width={800}
+              height={700}
               alt="Tyler Martin, Founder of Red Ridge AI"
               className="aspect-4/5 w-full object-cover"
               loading="eager"
+              decoding="async"
             />
             <div className="border-t border-border px-5 py-4">
               <p className="text-sm font-semibold text-foreground">Tyler Martin</p>

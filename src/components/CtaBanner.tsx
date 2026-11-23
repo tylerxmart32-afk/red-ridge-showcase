@@ -28,7 +28,7 @@ export function CtaBanner() {
             <Button asChild size="lg" variant="outline">
               <a href={CONTACT.demoHref}>
                 <CalendarCheck aria-hidden="true" />
-                Schedule Discovery
+                Book a Free 15-Minute Demo
               </a>
             </Button>
             <Button asChild size="lg" variant="ghost">

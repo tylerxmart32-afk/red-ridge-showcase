@@ -172,8 +172,8 @@ export const SERVICES: Service[] = [
       problem:
         "Most SMBs lose more revenue to unanswered calls and after-hours inquiries than to any marketing gap. The lead is already yours; it just has nowhere to land at 7pm on a Saturday.",
       outcomes: [
-        { value: "100%", label: "Of inbound calls answered" },
-        { value: "< 3s", label: "Average response time" },
+        { value: "100%", label: "Answer-rate target, day or night" },
+        { value: "< 3s", label: "Response-time target" },
         { value: "24/7", label: "Coverage with no headcount" },
       ],
       process: [
@@ -311,9 +311,9 @@ export const SERVICES: Service[] = [
       problem:
         "The bottleneck is rarely lead volume. It is the two days it takes to send a quote, the follow-up nobody made, and the invoice created by hand for the fourth time this week.",
       outcomes: [
-        { value: "10+ hrs", label: "Admin hours recovered weekly" },
-        { value: "Same day", label: "Quote turnaround" },
-        { value: "0", label: "Follow-ups forgotten" },
+        { value: "10+ hrs", label: "Weekly admin hours we aim to take off your plate" },
+        { value: "Same day", label: "Quote turnaround target" },
+        { value: "0", label: "Follow-ups left to memory" },
       ],
       process: [
         {
@@ -447,7 +447,7 @@ export const SERVICES: Service[] = [
         "Ranking is only half the job. Most inquiries are not ready to buy the day they find you, and without nurture they go to whoever follows up in month three.",
       outcomes: [
         { value: "Local 3", label: "Map pack target" },
-        { value: "90 days", label: "To measurable movement" },
+        { value: "90 days", label: "Typical window to first movement (no ranking is guaranteed)" },
         { value: "5-7", label: "Touches per nurture sequence" },
       ],
       process: [
@@ -533,6 +533,8 @@ export interface Client {
   outcome: string;
   services: string[];
   url: string;
+  /** Run by family or partners of Red Ridge AI: shown with a "Related party" tag (FTC material-connection disclosure). */
+  related?: boolean;
 }
 
 export const CLIENTS: Client[] = [
@@ -553,6 +555,7 @@ export const CLIENTS: Client[] = [
     outcome: "Dated site with a closed store rebuilt as a premium storefront, with new labels and studio photos for all 11 formulas.",
     services: ["Website Development", "Product Photography", "SEO"],
     url: "https://waxfactory.lovable.app",
+    related: true,
   },
   {
     name: "Sharpen it",
@@ -562,6 +565,7 @@ export const CLIENTS: Client[] = [
     outcome: "AI automations and SEO rebuilt the lead pipeline from the ground up.",
     services: ["AI Automations", "SEO", "Website Development"],
     url: "https://sharpenit.lovable.app",
+    related: true,
   },
   {
     name: "Marshal Holland",
@@ -598,6 +602,7 @@ export const CLIENTS: Client[] = [
     outcome: "Full SEO and marketing automation stack behind a rebuilt web presence.",
     services: ["SEO & Marketing Automation", "Website Development"],
     url: "https://torneymedia.lovable.app",
+    related: true,
   },
 ];
 

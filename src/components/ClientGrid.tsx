@@ -13,7 +13,7 @@ export function ClientGrid() {
         <SectionHeading
           eyebrow="Social proof"
           title="Live Client Work"
-          lede="Real businesses running systems we built. Each card links to their live site."
+          lede="Real businesses running systems we built. Each card links to their live site. Cards tagged Related party are businesses run by family or partners of Red Ridge AI."
         />
 
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">

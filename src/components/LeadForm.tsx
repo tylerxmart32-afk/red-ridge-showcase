@@ -208,6 +208,25 @@ export function LeadForm({
           />
           {errors.phone && <p className={errorClass}>{errors.phone}</p>}
         </div>
+        <div className="sm:col-span-2">
+          <label htmlFor="lf-time" className={labelClass}>
+            Preferred day and time
+          </label>
+          <input
+            id="lf-time"
+            className={inputClass}
+            value={form.preferredTime}
+            onChange={set("preferredTime")}
+            placeholder="e.g. Tuesday afternoon, or any weekday after 4pm"
+          />
+        </div>
+      </div>
+
+      <details className="mb-4 rounded-md border border-border/70 px-4 py-3">
+        <summary className="cursor-pointer text-sm text-muted-foreground transition-colors hover:text-foreground">
+          Add business details (optional)
+        </summary>
+        <div className="mt-4 grid gap-4 sm:grid-cols-2">
         <div>
           <label htmlFor="lf-business" className={labelClass}>
             Business name
@@ -248,19 +267,8 @@ export function LeadForm({
             autoComplete="url"
           />
         </div>
-        <div className="sm:col-span-2">
-          <label htmlFor="lf-time" className={labelClass}>
-            Preferred day and time
-          </label>
-          <input
-            id="lf-time"
-            className={inputClass}
-            value={form.preferredTime}
-            onChange={set("preferredTime")}
-            placeholder="e.g. Tuesday afternoon, or any weekday after 4pm"
-          />
         </div>
-      </div>
+      </details>
 
       <div className="mb-6">
         <label htmlFor="lf-message" className={labelClass}>
@@ -275,6 +283,12 @@ export function LeadForm({
           placeholder="Missed calls while on jobs, slow follow-up, booking, quotes that go quiet..."
         />
       </div>
+
+      <p className="mb-4 text-xs leading-relaxed text-muted-foreground">
+        If you share a phone number, you agree that Red Ridge AI may call or text you about this
+        request. Message and data rates may apply. Reply STOP to opt out. We never sell your
+        details.
+      </p>
 
       {submitError && (
         <p className="mb-4 text-sm text-destructive" role="alert">

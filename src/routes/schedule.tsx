@@ -65,13 +65,18 @@ function SchedulePage() {
                 Live demo
               </p>
               <h1 className="mt-3 text-4xl font-semibold tracking-tight text-balance sm:text-5xl">
-                Schedule your demo
+                Book a free 15-minute demo
               </h1>
               <p className="mt-5 text-base leading-relaxed text-muted-foreground sm:text-lg">
-                Tell us a bit about your business and when works for you. We will walk through
-                exactly what an agent or assistant looks like running inside it. Your request goes
-                straight into our CRM, so a real person follows up, not a queue.
+                Tell us a bit about your business and when works for you. Your request goes straight
+                into our CRM, so a real person confirms your time, usually the same business day.
               </p>
+              <ul className="mt-6 space-y-2 text-sm text-muted-foreground">
+                <li>• 15 minutes, no obligation, no pressure</li>
+                <li>• We walk through how calls and leads reach you today</li>
+                <li>• You hear an AI agent handle a call for a business like yours</li>
+                <li>• You leave knowing what it would cost and what it is worth</li>
+              </ul>
             </div>
           </div>
         </section>

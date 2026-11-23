@@ -121,7 +121,7 @@ function ServiceDetailPage() {
                 <Button asChild size="lg">
                   <a href={CONTACT.demoHref}>
                     <CalendarCheck aria-hidden="true" />
-                    Schedule Demo
+                    Book a Free 15-Minute Demo
                   </a>
                 </Button>
                 <Button asChild size="lg" variant="outline">
@@ -248,18 +248,25 @@ function ServiceDetailPage() {
               style={{ background: "var(--gradient-cta)" }}
             >
               <h2 className="text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
-                Ready to deploy {title.toLowerCase()}?
+                Ready to put {title} to work?
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-muted-foreground">
-                Bring us the bottleneck. We will map the fix, scope the build, and tell you what it
-                is worth before you commit a dollar.
+                {slug === "voice-and-chat-agents"
+                  ? "$0 setup and $700/month, month-to-month: you don't pay until it books you a job. Bring us the bottleneck and we will show you the agent working on it."
+                  : "Bring us the bottleneck. We will map the fix, scope the build, and tell you what it is worth before you commit a dollar."}
               </p>
               <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
                 <Button asChild size="lg">
-                  <a href={CONTACT.demoHref}>Schedule Discovery</a>
+                  <a href={CONTACT.demoHref}>
+                    <CalendarCheck aria-hidden="true" />
+                    Book a Free 15-Minute Demo
+                  </a>
                 </Button>
                 <Button asChild size="lg" variant="outline">
-                  <a href={CONTACT.requirementsHref}>Send Requirements</a>
+                  <a href={`${CONTACT.website}/pricing`}>
+                    See pricing
+                    <ArrowUpRight aria-hidden="true" />
+                  </a>
                 </Button>
               </div>
             </div>

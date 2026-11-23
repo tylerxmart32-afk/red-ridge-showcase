@@ -1,10 +1,13 @@
 import { useEffect } from "react";
 
 /**
- * Pinned to the 0.36 line so a breaking widget release can't change the site
- * without a code change. Docs: https://www.npmjs.com/package/@telnyx/ai-agent-widget
+ * Pinned to an exact file (0.36.1, the version "@0.36" resolved to on 2026-11-23) with a
+ * Subresource Integrity hash, so no new upstream publish can run on this site unreviewed.
+ * To upgrade: pick the version, download dist/bundle.min.js, recompute the sha384, update both.
+ * Docs: https://www.npmjs.com/package/@telnyx/ai-agent-widget
  */
-const TELNYX_WIDGET_SRC = "https://unpkg.com/@telnyx/ai-agent-widget@0.36";
+const TELNYX_WIDGET_SRC = "https://unpkg.com/@telnyx/ai-agent-widget@0.36.1/dist/bundle.min.js";
+const TELNYX_WIDGET_SRI = "sha384-cV+/5cTolTbujGzb/LPyBxpJasgoLXeloc8QHz7JZM6airE7Nc8SO1rz2v7PQ9GT";
 
 /**
  * Mounts the Telnyx AI agent widget (<telnyx-ai-agent>) for one assistant.
@@ -31,6 +34,8 @@ export function TelnyxAgentWidget({ agentId }: { agentId: string }) {
       if (!document.querySelector(`script[src="${TELNYX_WIDGET_SRC}"]`)) {
         const script = document.createElement("script");
         script.src = TELNYX_WIDGET_SRC;
+        script.integrity = TELNYX_WIDGET_SRI;
+        script.crossOrigin = "anonymous";
         script.async = true;
         document.body.appendChild(script);
       }
