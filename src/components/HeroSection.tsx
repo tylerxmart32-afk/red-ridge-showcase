@@ -59,19 +59,9 @@ export function HeroSection() {
             href="#clients"
             className="mt-8 flex w-fit items-center gap-3 rounded-full border border-transparent py-1 pr-3 text-sm text-muted-foreground transition-colors hover:border-border hover:text-foreground"
           >
-            <span className="flex -space-x-2">
-              {CLIENTS.map((client) => (
-                <span
-                  key={client.name}
-                  aria-hidden="true"
-                  className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-background text-[10px] font-semibold text-white opacity-90"
-                  style={{ backgroundColor: client.brandColor }}
-                >
-                  {client.initials}
-                </span>
-              ))}
+            <span className="whitespace-pre-line">
+              AC{"\n"}WF{"\n"}SI{"\n"}MH{"\n"}HP{"\n"}KE{"\n"}TM{"\n"}live client systems →
             </span>
-            {CLIENTS.length} live client systems →
           </a>
 
           <dl className="mt-8 grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-border bg-border lg:grid-cols-4">
