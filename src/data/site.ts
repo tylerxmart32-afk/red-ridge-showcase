@@ -68,12 +68,13 @@ export const PORTFOLIO = {
 } as const;
 
 export const HERO = {
-  eyebrow: "Client portfolio",
-  headline: "The AI Systems We Ship for",
-  headlineAccent: "Growing SMBs",
+  eyebrow: "Red Ridge AI · Branchburg, NJ",
+  headline: "Never miss another call.",
+  headlineAccent: "See it working for real New Jersey businesses.",
   subhead:
-    "This is the Red Ridge AI portfolio: the live voice agents, virtual assistants, platforms and websites we have built for real clients. For services, plans and pricing, or to start a project, head to our main site at redridgeai.com.",
-  mainSiteCta: "Visit redridgeai.com",
+    "We build 24/7 AI voice agents, virtual assistants and websites that answer every call, qualify the lead and book the job on your calendar. Seven client systems are live right now. Start with $0 setup: you don't pay until it books you a job.",
+  primaryCta: "Talk to Our AI Agent Now",
+  demoCta: "Book a Free 15-Minute Demo",
 } as const;
 
 /** Red Ridge AI x Watchman IT -> Connect Helm (connecthelm.com). */

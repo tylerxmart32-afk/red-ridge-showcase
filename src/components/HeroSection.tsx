@@ -1,4 +1,4 @@
-import { Phone, ArrowUpRight, MessagesSquare } from "lucide-react";
+import { Phone, CalendarCheck, MessagesSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CONTACT, HERO, HERO_STATS, CLIENTS } from "@/data/site";
 import headshotAsset from "@/assets/tyler-headshot.png.asset.json";
@@ -36,32 +36,42 @@ export function HeroSection() {
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Button asChild size="lg">
-              <a href={CONTACT.website}>
-                {HERO.mainSiteCta}
-                <ArrowUpRight aria-hidden="true" />
+              <a href="#talk">
+                <MessagesSquare aria-hidden="true" />
+                {HERO.primaryCta}
               </a>
             </Button>
             <Button asChild size="lg" variant="outline">
-              <a href={CONTACT.phoneHref}>
-                <Phone aria-hidden="true" />
-                Call {CONTACT.phone}
-              </a>
-            </Button>
-            <Button asChild size="lg" variant="ghost">
-              <a href="#talk">
-                <MessagesSquare aria-hidden="true" />
-                Talk to our AI agent
+              <a href={CONTACT.demoHref}>
+                <CalendarCheck aria-hidden="true" />
+                {HERO.demoCta}
               </a>
             </Button>
           </div>
 
           <a
-            href="#clients"
-            className="mt-8 flex w-fit items-center gap-3 rounded-full border border-transparent py-1 pr-3 text-sm text-muted-foreground transition-colors hover:border-border hover:text-foreground"
+            href={CONTACT.phoneHref}
+            className="mt-4 inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
           >
-            <span className="whitespace-pre-line">
-              AC{"\n"}WF{"\n"}SI{"\n"}MH{"\n"}HP{"\n"}KE{"\n"}TM{"\n"}live client systems →
+            <Phone aria-hidden="true" className="h-4 w-4" />
+            or call {CONTACT.phone}
+          </a>
+
+          <a
+            href="#clients"
+            className="mt-8 flex w-fit flex-wrap items-center gap-2 rounded-full border border-transparent py-1 pr-3 text-sm text-muted-foreground transition-colors hover:border-border hover:text-foreground"
+          >
+            <span aria-hidden="true" className="flex -space-x-2">
+              {CLIENTS.map((client) => (
+                <span
+                  key={client.name}
+                  className="flex h-8 w-8 items-center justify-center rounded-full border border-border bg-surface text-[10px] font-semibold text-foreground"
+                >
+                  {client.initials}
+                </span>
+              ))}
             </span>
+            <span>{CLIENTS.length} live client systems →</span>
           </a>
 
           <dl className="mt-8 grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-border bg-border lg:grid-cols-4">
