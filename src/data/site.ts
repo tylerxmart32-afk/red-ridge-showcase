@@ -125,6 +125,7 @@ export const HERO_STATS: { value: string; label: string }[] = [
   { value: "5+", label: "Years shipping AI systems" },
   { value: "7", label: "Live client systems" }, // keep equal to CLIENTS.length (the hero strip counts CLIENTS)
   { value: "4", label: "Flagship platforms built" },
+  { value: "30+", label: "Concept builds" }, // keep equal to or below DEMOS.length (floor of the demo gallery count)
 ];
 
 export interface ServiceOutcome {
@@ -554,6 +555,431 @@ export const CLIENTS: Client[] = [
     outcome: "Full SEO and marketing automation stack behind a rebuilt web presence.",
     services: ["SEO & Marketing Automation", "Website Development"],
     url: "https://torneymedia.lovable.app",
+  },
+];
+
+// ── Concept builds (anonymized demo sites) ──────────────────────────────────
+
+/** Filter chips, in display order. */
+export const DEMO_CATEGORIES = [
+  "Restaurants & Food",
+  "Legal",
+  "Auto",
+  "Health & Wellness",
+  "Home Services",
+  "Local Business",
+] as const;
+
+export type DemoCategory = (typeof DEMO_CATEGORIES)[number];
+
+export const DEMOS_SECTION = {
+  eyebrow: "Concept builds",
+  lede: "Full demo websites with fictional branding. Each one began as a custom build for a real local business and was rebuilt here as a concept, so you can click through a complete site without anyone's real name on it. These are not client projects.",
+  note: "All businesses shown are fictional. Built with the same stack we ship to clients.",
+} as const;
+
+export interface DemoBuild {
+  name: string;
+  initials: string;
+  brandColor: string;
+  category: DemoCategory;
+  industry: string;
+  location: string;
+  description: string;
+  url: string;
+  builtBy: "Red Ridge AI" | "Connect Helm";
+}
+
+export const DEMOS: DemoBuild[] = [
+  // Restaurants & Food
+  {
+    name: "Lorenzo's Pizza & Italian Kitchen",
+    initials: "LP",
+    brandColor: "#B91C1C",
+    category: "Restaurants & Food",
+    industry: "Pizzeria & Italian restaurant",
+    location: "Browns Mills, NJ",
+    description:
+      "Full site for a family Italian restaurant: menu page, delivery area, and catering information.",
+    url: "https://lorenzos-pizza-kitchen.lovable.app",
+    builtBy: "Red Ridge AI",
+  },
+  {
+    name: "Boardwalk Deli Co.",
+    initials: "BD",
+    brandColor: "#B45309",
+    category: "Restaurants & Food",
+    industry: "Deli & catering",
+    location: "Manalapan, NJ",
+    description:
+      "Neighborhood deli site covering breakfast rolls, subs, party platters, and a text-back order request form.",
+    url: "https://boardwalk-deli.lovable.app",
+    builtBy: "Red Ridge AI",
+  },
+  {
+    name: "The Merry Piper Bar & Grill",
+    initials: "MP",
+    brandColor: "#9A3412",
+    category: "Restaurants & Food",
+    industry: "Bar & grill",
+    location: "Freehold, NJ",
+    description:
+      "Bar and grill site with two location pages, weekly specials, and a mailing-list signup.",
+    url: "https://merry-piper.lovable.app",
+    builtBy: "Connect Helm",
+  },
+  {
+    name: "Bellacosta Family Restaurant",
+    initials: "BF",
+    brandColor: "#BE123C",
+    category: "Restaurants & Food",
+    industry: "Family Italian restaurant",
+    location: "Freehold, NJ",
+    description:
+      "Family Italian restaurant site with menu, party platters, private-event information, and the family story.",
+    url: "https://bellacosta-freehold.lovable.app",
+    builtBy: "Connect Helm",
+  },
+  {
+    name: "Aegean Table Mediterranean Grill",
+    initials: "AT",
+    brandColor: "#0E7490",
+    category: "Restaurants & Food",
+    industry: "Mediterranean restaurant",
+    location: "Freehold, NJ",
+    description:
+      "Turkish and Greek restaurant site with a full menu plus catering and private-party pages.",
+    url: "https://aegean-table.lovable.app",
+    builtBy: "Connect Helm",
+  },
+  {
+    name: "The Nine Pines Diner",
+    initials: "NP",
+    brandColor: "#4D7C0F",
+    category: "Restaurants & Food",
+    industry: "Neighborhood diner",
+    location: "Freehold, NJ",
+    description:
+      "Diner site with breakfast, lunch, and dinner menu sections, opening hours, and a mailing-list signup.",
+    url: "https://nine-pines-diner.lovable.app",
+    builtBy: "Connect Helm",
+  },
+  // Legal
+  {
+    name: "Meridian Law Group",
+    initials: "ML",
+    brandColor: "#1E40AF",
+    category: "Legal",
+    industry: "Flat-fee law practice",
+    location: "Montville, NJ",
+    description:
+      "Law practice site that explains flat-fee pricing and payment plans up front, with a consultation request flow.",
+    url: "https://meridian-law-group.lovable.app",
+    builtBy: "Red Ridge AI",
+  },
+  {
+    name: "Harborlight Law Firm",
+    initials: "HL",
+    brandColor: "#1D4ED8",
+    category: "Legal",
+    industry: "General practice law firm",
+    location: "Manasquan, NJ",
+    description:
+      "Multi-page law firm site: practice areas, attorney profiles, contact page, and a free case-evaluation form.",
+    url: "https://harborlight-law.lovable.app",
+    builtBy: "Red Ridge AI",
+  },
+  {
+    name: "Whitfield Law LLC",
+    initials: "WL",
+    brandColor: "#334155",
+    category: "Legal",
+    industry: "Personal injury trial attorney",
+    location: "Neptune, NJ",
+    description:
+      "Personal injury attorney site built around trial experience, case-result highlights, and a free-consultation intake form.",
+    url: "https://whitfield-law.lovable.app",
+    builtBy: "Red Ridge AI",
+  },
+  {
+    name: "Mercer Law Office",
+    initials: "MO",
+    brandColor: "#6D28D9",
+    category: "Legal",
+    industry: "Licensing & defense law",
+    location: "Lake Como, NJ",
+    description:
+      "Specialty practice site with separate pages for liquor licensing, ABC matters, DWI/DUI, and municipal court defense.",
+    url: "https://mercer-law-office.lovable.app",
+    builtBy: "Red Ridge AI",
+  },
+  {
+    name: "Hartwell & Sloane, LLC",
+    initials: "HS",
+    brandColor: "#115E59",
+    category: "Legal",
+    industry: "Bankruptcy law",
+    location: "Neptune, NJ",
+    description:
+      "Bankruptcy firm site with a fresh-start message, plain-language explainers, and a consultation intake flow.",
+    url: "https://hartwell-sloane-law.lovable.app",
+    builtBy: "Connect Helm",
+  },
+  // Auto
+  {
+    name: "Torque House Performance",
+    initials: "TH",
+    brandColor: "#C2410C",
+    category: "Auto",
+    industry: "Engine & drivetrain performance shop",
+    location: "Toms River, NJ",
+    description:
+      "Performance shop site for engine and drivetrain specialists: service breakdowns and a same-day-reply quote form.",
+    url: "https://torque-house-performance.lovable.app",
+    builtBy: "Red Ridge AI",
+  },
+  {
+    name: "Rally Auto Works",
+    initials: "RA",
+    brandColor: "#DC2626",
+    category: "Auto",
+    industry: "Neighborhood auto repair",
+    location: "Neptune City, NJ",
+    description:
+      "Neighborhood repair shop site with straight-talk service explanations and a quick request-a-time form.",
+    url: "https://rally-auto-works.lovable.app",
+    builtBy: "Connect Helm",
+  },
+  {
+    name: "Motor Medics Auto Care",
+    initials: "MM",
+    brandColor: "#047857",
+    category: "Auto",
+    industry: "Auto repair & maintenance",
+    location: "Neptune City, NJ",
+    description:
+      "Auto care site covering brakes, diagnostics, A/C, oil service, and tires, with a dedicated service-request page.",
+    url: "https://motor-medics-auto-care.lovable.app",
+    builtBy: "Connect Helm",
+  },
+  {
+    name: "Rocket Service Center",
+    initials: "RS",
+    brandColor: "#EA580C",
+    category: "Auto",
+    industry: "Family auto repair",
+    location: "Neptune City, NJ",
+    description:
+      "Family auto shop site with certified-technician messaging and a service-request form that promises a callback when the shop opens.",
+    url: "https://rocket-service-center.lovable.app",
+    builtBy: "Connect Helm",
+  },
+  // Health & Wellness
+  {
+    name: "Aurora Ritual Salon & Head Spa",
+    initials: "AR",
+    brandColor: "#A16207",
+    category: "Health & Wellness",
+    industry: "Salon & head spa",
+    location: "Asbury Park, NJ",
+    description:
+      "Boutique salon and head spa site with a service menu, a retail boutique, and an online booking page.",
+    url: "https://aurora-ritual-spa.lovable.app",
+    builtBy: "Connect Helm",
+  },
+  {
+    name: "Radiant Smile Dental Studio",
+    initials: "RD",
+    brandColor: "#0891B2",
+    category: "Health & Wellness",
+    industry: "Dental studio",
+    location: "Neptune, NJ",
+    description:
+      "Spa-feel dental site covering general, restorative, and cosmetic care, with a Spanish-speaking team callout.",
+    url: "https://radiant-smile-dental.lovable.app",
+    builtBy: "Connect Helm",
+  },
+  {
+    name: "Lumina Med Spa",
+    initials: "LM",
+    brandColor: "#BE185D",
+    category: "Health & Wellness",
+    industry: "Physician-led med spa",
+    location: "Tinton Falls, NJ",
+    description:
+      "Med spa site with treatment categories, after-hours request intake, and consult-first disclaimers.",
+    url: "https://lumina-med-spa.lovable.app",
+    builtBy: "Connect Helm",
+  },
+  {
+    name: "Harbor Point Dental Care",
+    initials: "HD",
+    brandColor: "#2563EB",
+    category: "Health & Wellness",
+    industry: "Multi-specialty dental practice",
+    location: "Neptune City, NJ",
+    description:
+      "Multi-specialty dental site with service pages, same-day emergency messaging, and an online booking page.",
+    url: "https://harbor-point-dental.lovable.app",
+    builtBy: "Connect Helm",
+  },
+  {
+    name: "Coastal Grove Family Dental",
+    initials: "CG",
+    brandColor: "#0D9488",
+    category: "Health & Wellness",
+    industry: "Family dentistry",
+    location: "Neptune City, NJ",
+    description:
+      "Family dentist site built around simple booking: services, accessibility details, and an appointment request form.",
+    url: "https://coastal-grove-dental.lovable.app",
+    builtBy: "Connect Helm",
+  },
+  // Home Services
+  {
+    name: "Timberline Tree Service",
+    initials: "TT",
+    brandColor: "#15803D",
+    category: "Home Services",
+    industry: "Tree care & landscaping",
+    location: "Freehold, NJ",
+    description:
+      "Full site for a local tree-care company: removal, stump grinding, landscaping and hardscaping pages, plus a free-estimate form.",
+    url: "https://timberline-tree-service.lovable.app",
+    builtBy: "Red Ridge AI",
+  },
+  {
+    name: "Stonecraft Masonry & Construction",
+    initials: "SM",
+    brandColor: "#57534E",
+    category: "Home Services",
+    industry: "Masonry, paving & waterproofing",
+    location: "Belleville, NJ",
+    description:
+      "Multi-page contractor site with services, a project gallery, testimonials, and an estimate request form.",
+    url: "https://stonecraft-masonry.lovable.app",
+    builtBy: "Red Ridge AI",
+  },
+  {
+    name: "BlueLine Plumbing",
+    initials: "BP",
+    brandColor: "#0369A1",
+    category: "Home Services",
+    industry: "Licensed master plumber",
+    location: "Manahawkin, NJ",
+    description:
+      "One-page site built around a licensed master plumber: 24/7 repair, water heaters, drain cleaning, and a text-first contact flow.",
+    url: "https://blueline-plumbing-nj.lovable.app",
+    builtBy: "Red Ridge AI",
+  },
+  {
+    name: "Keystone Home Improvements LLC",
+    initials: "KH",
+    brandColor: "#92400E",
+    category: "Home Services",
+    industry: "Remodeling & repairs",
+    location: "New Jersey",
+    description:
+      "Home remodeling and repair site with a service overview and a project-request flow made for quick estimates.",
+    url: "https://keystone-home-improvements.lovable.app",
+    builtBy: "Red Ridge AI",
+  },
+  {
+    name: "Driftwood Builders LLC",
+    initials: "DB",
+    brandColor: "#0F766E",
+    category: "Home Services",
+    industry: "General contractor",
+    location: "Bayville, NJ",
+    description:
+      "General contractor site covering kitchens, bathrooms, flooring, decks, and windows, with licensed-and-insured trust signals.",
+    url: "https://driftwood-builders.lovable.app",
+    builtBy: "Red Ridge AI",
+  },
+  {
+    name: "J & M Plumbing and Heating",
+    initials: "JM",
+    brandColor: "#1E3A8A",
+    category: "Home Services",
+    industry: "Plumbing & heating",
+    location: "Bayville, NJ",
+    description:
+      "Plumbing and heating site spanning residential, commercial, and facility-team service, with a dedicated contact page.",
+    url: "https://jm-plumbing-heating.lovable.app",
+    builtBy: "Red Ridge AI",
+  },
+  {
+    name: "Evergreen Ridge Landscaping",
+    initials: "ER",
+    brandColor: "#166534",
+    category: "Home Services",
+    industry: "Lawn care & landscaping",
+    location: "Tacoma, WA",
+    description:
+      "Lawn care and landscaping site with a service list, a service-area section, and a free-quote request form.",
+    url: "https://evergreen-ridge-landscaping.lovable.app",
+    builtBy: "Red Ridge AI",
+  },
+  {
+    name: "Ironclad Mechanical Contractors",
+    initials: "IM",
+    brandColor: "#475569",
+    category: "Home Services",
+    industry: "HVAC & plumbing contractor",
+    location: "Neptune City, NJ",
+    description:
+      "HVAC and plumbing contractor site with service pages, after-hours dispatch messaging, and a service-request page.",
+    url: "https://ironclad-mechanical.lovable.app",
+    builtBy: "Connect Helm",
+  },
+  {
+    name: "T&T Home Service",
+    initials: "TS",
+    brandColor: "#CA8A04",
+    category: "Home Services",
+    industry: "Electrical, plumbing & generators",
+    location: "Neptune City, NJ",
+    description:
+      "24/7 home-service site covering electrical, plumbing, generators, and stair lifts, with an emergency-first contact flow.",
+    url: "https://tt-home-service.lovable.app",
+    builtBy: "Connect Helm",
+  },
+  // Local Business
+  {
+    name: "Beacon Oil Company",
+    initials: "BO",
+    brandColor: "#7C2D12",
+    category: "Local Business",
+    industry: "Heating oil & fuel delivery",
+    location: "Toms River, NJ",
+    description:
+      "Multi-page fuel delivery site: heating oil, diesel, gasoline, and HVAC service pages, plus contact and careers pages.",
+    url: "https://beacon-oil.lovable.app",
+    builtBy: "Red Ridge AI",
+  },
+  {
+    name: "Seaside Moving & Storage",
+    initials: "SS",
+    brandColor: "#0284C7",
+    category: "Local Business",
+    industry: "Moving & storage",
+    location: "Toms River, NJ",
+    description:
+      "Moving company site covering local and long-distance moves, packing, climate-controlled storage, and a contact flow.",
+    url: "https://seaside-moving-storage.lovable.app",
+    builtBy: "Connect Helm",
+  },
+  {
+    name: "Clearline Call Solutions",
+    initials: "CC",
+    brandColor: "#7C3AED",
+    category: "Local Business",
+    industry: "Bilingual answering service",
+    location: "New Jersey (remote)",
+    description:
+      "Multi-page answering-service site with services, pricing, FAQ, and a quote request flow for 24/7 bilingual coverage.",
+    url: "https://clearline-call-solutions.lovable.app",
+    builtBy: "Connect Helm",
   },
 ];
 

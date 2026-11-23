@@ -33,6 +33,13 @@ export function TopNav() {
             <Link to="/" hash="clients" className="transition-colors hover:text-foreground">
               Clients
             </Link>
+            <Link
+              to="/"
+              hash="concepts"
+              className="hidden transition-colors hover:text-foreground lg:inline"
+            >
+              Concept builds
+            </Link>
             <Link to="/" hash="services" className="transition-colors hover:text-foreground">
               Services
             </Link>

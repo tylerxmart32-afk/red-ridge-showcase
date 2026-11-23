@@ -76,7 +76,7 @@ export function HeroSection() {
 
           <dl className="mt-8 grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-border bg-border lg:grid-cols-4">
             {HERO_STATS.map((stat) => (
-              <div key={stat.label} className="bg-surface px-5 py-4">
+              <div key={stat.label} className="bg-surface px-5 py-4 last:col-span-full">
                 <dt className="text-xs tracking-wide text-muted-foreground uppercase">
                   {stat.label}
                 </dt>

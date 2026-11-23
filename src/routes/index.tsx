@@ -8,6 +8,7 @@ import { AgentsVsAssistants } from "@/components/AgentsVsAssistants";
 import { AiAgentSection } from "@/components/AiAgentSection";
 import { FlagshipProducts } from "@/components/FlagshipProducts";
 import { ClientGrid } from "@/components/ClientGrid";
+import { DemoGallery } from "@/components/DemoGallery";
 import { ServicesGrid } from "@/components/ServicesGrid";
 import { CtaBanner } from "@/components/CtaBanner";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -102,6 +103,7 @@ function Index() {
         <AiAgentSection />
         <FlagshipProducts />
         <ClientGrid />
+        <DemoGallery />
         <ServicesGrid />
         <CtaBanner />
       </main>
