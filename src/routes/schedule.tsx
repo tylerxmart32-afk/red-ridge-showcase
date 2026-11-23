@@ -5,9 +5,10 @@ import { TopNav } from "@/components/TopNav";
 import { SiteFooter } from "@/components/SiteFooter";
 import { LeadForm } from "@/components/LeadForm";
 
-const TITLE = "Schedule a Demo — Red Ridge AI";
+const TITLE = "Book a Free 15-Minute AI Demo | Red Ridge AI";
 const DESCRIPTION =
-  "Book time with Red Ridge AI to walk through what an AI agent or virtual assistant would look like running inside your business.";
+  "See what an AI agent or virtual assistant would look like inside your business. Tell us what you want it to handle; a real person confirms your time.";
+const PAGE_URL = "https://redridgeagency.com/schedule";
 
 export const Route = createFileRoute("/schedule")({
   head: () => ({
@@ -17,6 +18,23 @@ export const Route = createFileRoute("/schedule")({
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESCRIPTION },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: PAGE_URL },
+    ],
+    links: [{ rel: "canonical", href: PAGE_URL }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          "@id": `${PAGE_URL}#webpage`,
+          url: PAGE_URL,
+          name: TITLE,
+          description: DESCRIPTION,
+          isPartOf: { "@id": "https://redridgeagency.com/#website" },
+          about: { "@id": "https://www.redridgeai.com/#organization" },
+        }),
+      },
     ],
   }),
   component: SchedulePage,

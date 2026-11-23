@@ -4,7 +4,10 @@ import { ArrowLeft, ArrowUpRight, Check, CalendarCheck, Phone } from "lucide-rea
 import { Button } from "@/components/ui/button";
 import { TopNav } from "@/components/TopNav";
 import { SiteFooter } from "@/components/SiteFooter";
-import { CONTACT, SERVICES, SERVICE_BY_SLUG } from "@/data/site";
+import { CONTACT, SERVICES, SERVICE_BY_SLUG, SERVICE_SEO } from "@/data/site";
+
+const SITE = "https://redridgeagency.com";
+const MAIN_ORG_ID = "https://www.redridgeai.com/#organization";
 
 export const Route = createFileRoute("/services/$slug")({
   loader: ({ params }) => {
@@ -17,16 +20,58 @@ export const Route = createFileRoute("/services/$slug")({
     if (!service) {
       return { meta: [{ title: "Service not found — Red Ridge AI" }, { name: "robots", content: "noindex" }] };
     }
-    const title = `${service.title} — Red Ridge AI`;
-    const description = service.detail.intro.slice(0, 155);
+    const seo = SERVICE_SEO[service.slug];
+    const title = seo?.title ?? `${service.title} | Red Ridge AI`;
+    const description = seo?.description ?? service.description;
+    const url = `${SITE}/services/${service.slug}`;
     return {
       meta: [
         { title },
         { name: "description", content: description },
         { property: "og:title", content: title },
         { property: "og:description", content: description },
-        { property: "og:type", content: "article" },
+        { property: "og:type", content: "website" },
+        { property: "og:url", content: url },
         { name: "twitter:card", content: "summary_large_image" },
+      ],
+      links: [{ rel: "canonical", href: url }],
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "WebPage",
+                "@id": `${url}#webpage`,
+                url,
+                name: title,
+                description,
+                isPartOf: { "@id": `${SITE}/#website` },
+                breadcrumb: { "@id": `${url}#breadcrumb` },
+                mainEntity: { "@id": `${url}#service` },
+              },
+              {
+                "@type": "Service",
+                "@id": `${url}#service`,
+                name: service.title,
+                serviceType: service.title,
+                description: service.description,
+                url,
+                provider: { "@id": MAIN_ORG_ID },
+                areaServed: { "@type": "State", name: "New Jersey" },
+              },
+              {
+                "@type": "BreadcrumbList",
+                "@id": `${url}#breadcrumb`,
+                itemListElement: [
+                  { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+                  { "@type": "ListItem", position: 2, name: service.title, item: url },
+                ],
+              },
+            ],
+          }),
+        },
       ],
     };
   },

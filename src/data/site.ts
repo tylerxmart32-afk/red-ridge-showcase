@@ -126,7 +126,7 @@ export const HERO_STATS: { value: string; label: string }[] = [
   { value: "5+", label: "Years shipping AI systems" },
   { value: "7", label: "Live client systems" }, // keep equal to CLIENTS.length (the hero strip counts CLIENTS)
   { value: "4", label: "Flagship platforms built" },
-  { value: "30+", label: "Concept builds" }, // keep equal to or below DEMOS.length (floor of the demo gallery count)
+  { value: "32", label: "Concept builds" }, // keep equal to DEMOS.length (the gallery heading shows the same count)
 ];
 
 export interface ServiceOutcome {
@@ -482,6 +482,48 @@ export const SERVICES: Service[] = [
 export const SERVICE_BY_SLUG: Record<string, Service> = Object.fromEntries(
   SERVICES.map((service) => [service.slug, service]),
 );
+
+/**
+ * Hand-written search titles (<= 60 chars) and meta descriptions (<= 155 chars) per service.
+ * Never slice the page copy for these: a cut-off description shows up broken in Google.
+ */
+export const SERVICE_SEO: Record<string, { title: string; description: string }> = {
+  "voice-and-chat-agents": {
+    title: "AI Voice & Chat Agents for NJ Businesses | Red Ridge AI",
+    description:
+      "An AI agent that answers every call and text 24/7, qualifies the lead and books it on your calendar. $0 setup: you don't pay until it books you a job.",
+  },
+  "virtual-assistants": {
+    title: "AI Virtual Assistant That Runs Your CRM | Red Ridge AI",
+    description:
+      "An AI assistant that updates your CRM, keeps your pipeline clean and sends you daily reminders and reports, so you stop logging in to run your business.",
+  },
+  "website-development": {
+    title: "Websites Built to Get Calls, NJ Businesses | Red Ridge AI",
+    description:
+      "Fast, mobile-first websites built around one goal: get the visitor to call, book or buy. Booking flows, technical SEO and analytics are included.",
+  },
+  "ai-automations": {
+    title: "AI Automation for Quotes & Follow-Up | Red Ridge AI",
+    description:
+      "We map how a job moves from inquiry to paid invoice, then automate the manual steps: same-day quotes, follow-ups that go out, human review where needed.",
+  },
+  "seo-and-marketing-automation": {
+    title: "Local SEO & Lead Follow-Up for NJ Businesses | Red Ridge AI",
+    description:
+      "Fix what blocks you in Google, build pages for what buyers search, and follow up every lead by email and SMS until they book. Local map-pack focus.",
+  },
+  "social-media-management": {
+    title: "Social Media Management Without Hiring | Red Ridge AI",
+    description:
+      "A content system built from your own jobs: a monthly calendar, drafts you approve in one sitting, and posts that schedule themselves. About 1 hour a month.",
+  },
+  "backend-and-database": {
+    title: "Secure Business Data & Integrations | Red Ridge AI",
+    description:
+      "One source of truth for customers, jobs and quotes: a clean database, role-based access and integrations that connect your CRM, accounting and tools.",
+  },
+};
 
 export interface Client {
   name: string;
@@ -1099,18 +1141,18 @@ export interface FlagshipProduct {
 
 export const FLAGSHIP_PRODUCTS: FlagshipProduct[] = [
   {
-    id: "nexus",
-    name: "NEXUS",
+    id: "ikosi",
+    name: "IKOSI",
     category: "White-label multi-tenant agent platform",
     summary:
-      "Every client gets an isolated AI agent, a branded dashboard, and two-way CRM sync out to their own system — one platform, many businesses, no data crossing streams.",
+      "Every client gets their own AI agent, their own CRM and a branded client portal — one platform, many businesses, no data crossing between them.",
     capabilities: [
-      "Per-client isolated agent + Slack workspace",
-      "Branded client dashboard",
-      "Two-way sync out to Salesforce or CRM",
+      "Per-client isolated agent and CRM",
+      "Branded client portal",
+      "Telegram and web chat on one shared memory",
       "Usage metering per tenant",
     ],
-    stack: ["Salesforce", "Slack", "Multi-tenant infra"],
+    stack: ["Twenty CRM", "Telegram", "Multi-tenant infra"],
     status: "Live in production",
     icon: Building2,
     featured: true,
@@ -1137,7 +1179,7 @@ export const FLAGSHIP_PRODUCTS: FlagshipProduct[] = [
     name: "FRIDAY",
     category: "Automated security scanning + pentest engine",
     summary:
-      "Runs a real security scan and penetration test against a prospect's live website, then hands back a branded, readable report — a working credibility hook, not a slide.",
+      "Runs a real security scan, and with your written authorization a penetration test, against your live website, then hands back a branded report in plain English you can act on.",
     capabilities: [
       "SSL, headers, and DNS security scan",
       "Multi-agent penetration test engine",

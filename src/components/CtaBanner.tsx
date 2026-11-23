@@ -14,9 +14,9 @@ export function CtaBanner() {
             Want one of these for your business?
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-muted-foreground">
-            Everything on this page was built by Red Ridge AI. Services, plans and pricing live on
-            our main site, and a discovery call is the fastest way to find out what your bottleneck
-            is worth.
+            Every system on this page was built by Red Ridge AI, directly or through Connect Helm.
+            Services, plans and pricing live on our main site, and a discovery call is the fastest
+            way to find out what your bottleneck is worth.
           </p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
             <Button asChild size="lg">

@@ -54,6 +54,9 @@ function DemoCard({
       <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{description}</p>
 
       <ul className="mt-4 flex flex-wrap gap-2">
+        <li className="rounded-full border border-primary/40 px-2.5 py-1 text-xs text-foreground">
+          Concept build (fictional)
+        </li>
         <li className="rounded-full border border-border px-2.5 py-1 text-xs text-muted-foreground transition-colors duration-300 group-hover:border-primary/40 group-hover:text-foreground">
           Built by {builtBy}
         </li>

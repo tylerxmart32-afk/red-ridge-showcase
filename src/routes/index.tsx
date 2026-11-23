@@ -14,12 +14,23 @@ import { CtaBanner } from "@/components/CtaBanner";
 import { SiteFooter } from "@/components/SiteFooter";
 import { AUDITS_ORDER_URL, CONTACT, ONE_TIME_AUDITS, SERVICES } from "@/data/site";
 
-const TITLE = "Red Ridge AI Portfolio — Client Work, Platforms & the Connect Helm Partnership";
+const TITLE = "Red Ridge AI Portfolio: Live AI Agents for NJ Businesses";
 const DESCRIPTION =
-  "The portfolio of Red Ridge AI (main site: redridgeai.com): live AI voice agents, virtual assistants, platforms and websites built for NJ businesses, plus Connect Helm, our partnership with Watchman IT.";
+  "See 7 live client systems built by Red Ridge AI in Branchburg, NJ: 24/7 AI voice agents, virtual assistants and websites. Talk to our AI agent now.";
+const SITE = "https://redridgeagency.com";
 const MAIN_SITE = "https://www.redridgeai.com";
 const MAIN_ORG_ID = `${MAIN_SITE}/#organization`;
+const FOUNDER_ID = `${MAIN_SITE}/#founder`;
 const SERVICE_AREA = { "@type": "State", name: "New Jersey" } as const;
+// Same postal address redridgeai.com publishes for this @id, so the two domains never disagree.
+const ADDRESS = {
+  "@type": "PostalAddress",
+  streetAddress: "971 US Highway 202 N, Suite N",
+  addressLocality: "Branchburg",
+  addressRegion: "NJ",
+  postalCode: "08876",
+  addressCountry: "US",
+} as const;
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -40,14 +51,28 @@ export const Route = createFileRoute("/")({
           "@context": "https://schema.org",
           "@graph": [
             {
+              "@type": "WebSite",
+              "@id": `${SITE}/#website`,
+              name: "Red Ridge AI Portfolio",
+              url: `${SITE}/`,
+              publisher: { "@id": MAIN_ORG_ID },
+            },
+            {
               "@type": "CollectionPage",
-              "@id": "https://redridgeagency.com/#portfolio",
+              "@id": `${SITE}/#portfolio`,
               name: "Red Ridge AI Portfolio",
               description: DESCRIPTION,
-              url: "https://redridgeagency.com/",
+              url: `${SITE}/`,
               about: { "@id": MAIN_ORG_ID },
-              isPartOf: { "@type": "WebSite", name: "Red Ridge AI", url: `${MAIN_SITE}/` },
+              isPartOf: { "@id": `${SITE}/#website` },
               mainEntity: { "@id": MAIN_ORG_ID },
+            },
+            {
+              "@type": "Person",
+              "@id": FOUNDER_ID,
+              name: "Tyler Martin",
+              jobTitle: "Founder",
+              worksFor: { "@id": MAIN_ORG_ID },
             },
             {
               "@type": ["LocalBusiness", "ProfessionalService"],
@@ -66,8 +91,10 @@ export const Route = createFileRoute("/")({
                 availableLanguage: "English",
               },
               areaServed: SERVICE_AREA,
-              address: { "@type": "PostalAddress", addressLocality: "Branchburg", addressRegion: "NJ", addressCountry: "US" },
-              sameAs: ["https://redridgeagency.com", "https://connecthelm.com"],
+              address: ADDRESS,
+              founder: { "@id": FOUNDER_ID },
+              // sameAs is for the entity's own profiles (LinkedIn, Google Business Profile...).
+              // Our other domains are not profiles of it, so none are listed until real ones exist.
               knowsAbout: [
                 "AI consulting for small and midsize businesses",
                 ...SERVICES.map((service) => service.title),
@@ -82,7 +109,7 @@ export const Route = createFileRoute("/")({
                     name: service.title,
                     serviceType: service.title,
                     description: service.description,
-                    url: `https://redridgeagency.com/services/${service.slug}`,
+                    url: `${SITE}/services/${service.slug}`,
                     provider: { "@id": MAIN_ORG_ID },
                     areaServed: SERVICE_AREA,
                   },

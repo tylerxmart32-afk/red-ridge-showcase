@@ -132,7 +132,7 @@ export function SiteFooter() {
             &copy; {new Date().getFullYear()} {CONTACT.company}. All rights reserved.
           </p>
           <p>
-            Built and operated in-house. This is the client showcase for{" "}
+            Built by Red Ridge AI, directly or through Connect Helm. This is the client showcase for{" "}
             <a href={CONTACT.website} className="transition-colors hover:text-primary">
               redridgeai.com
             </a>

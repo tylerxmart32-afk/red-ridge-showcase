@@ -12,8 +12,8 @@ export function ClientGrid() {
       <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-24">
         <SectionHeading
           eyebrow="Social proof"
-          title="Companies We've Transformed"
-          lede="Operators who stopped losing revenue to missed calls, slow follow-up, and manual work. Every logo below is a link to their live site."
+          title="Live Client Work"
+          lede="Real businesses running systems we built. Each card links to their live site."
         />
 
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
