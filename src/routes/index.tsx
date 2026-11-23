@@ -12,13 +12,14 @@ import { DemoGallery } from "@/components/DemoGallery";
 import { ServicesGrid } from "@/components/ServicesGrid";
 import { CtaBanner } from "@/components/CtaBanner";
 import { SiteFooter } from "@/components/SiteFooter";
-import { AUDITS_ORDER_URL, ONE_TIME_AUDITS } from "@/data/site";
+import { AUDITS_ORDER_URL, CONTACT, ONE_TIME_AUDITS, SERVICES } from "@/data/site";
 
 const TITLE = "Red Ridge AI Portfolio — Client Work, Platforms & the Connect Helm Partnership";
 const DESCRIPTION =
   "The portfolio of Red Ridge AI (main site: redridgeai.com): live AI voice agents, virtual assistants, platforms and websites built for NJ businesses, plus Connect Helm, our partnership with Watchman IT.";
 const MAIN_SITE = "https://www.redridgeai.com";
 const MAIN_ORG_ID = `${MAIN_SITE}/#organization`;
+const SERVICE_AREA = { "@type": "State", name: "New Jersey" } as const;
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -51,17 +52,42 @@ export const Route = createFileRoute("/")({
             {
               "@type": ["LocalBusiness", "ProfessionalService"],
               "@id": MAIN_ORG_ID,
-              name: "Red Ridge AI",
+              name: CONTACT.company,
+              description: CONTACT.tagline,
               url: `${MAIN_SITE}/`,
-              telephone: "+17325062323",
-              email: "info@redridgeai.com",
-              areaServed: { "@type": "State", name: "New Jersey" },
+              telephone: CONTACT.phoneHref.replace("tel:", ""),
+              email: CONTACT.email,
+              contactPoint: {
+                "@type": "ContactPoint",
+                telephone: CONTACT.phoneHref.replace("tel:", ""),
+                email: CONTACT.email,
+                contactType: "sales",
+                areaServed: SERVICE_AREA,
+                availableLanguage: "English",
+              },
+              areaServed: SERVICE_AREA,
               address: { "@type": "PostalAddress", addressLocality: "Branchburg", addressRegion: "NJ", addressCountry: "US" },
               sameAs: ["https://redridgeagency.com", "https://connecthelm.com"],
-              makesOffer: [
-                { "@type": "Offer", itemOffered: { "@type": "Service", name: "AI Voice & Chat Agents" } },
-                { "@type": "Offer", itemOffered: { "@type": "Service", name: "Virtual Assistants" } },
+              knowsAbout: [
+                "AI consulting for small and midsize businesses",
+                ...SERVICES.map((service) => service.title),
               ],
+              hasOfferCatalog: {
+                "@type": "OfferCatalog",
+                name: "AI consulting and implementation services",
+                itemListElement: SERVICES.map((service) => ({
+                  "@type": "Offer",
+                  itemOffered: {
+                    "@type": "Service",
+                    name: service.title,
+                    serviceType: service.title,
+                    description: service.description,
+                    url: `https://redridgeagency.com/services/${service.slug}`,
+                    provider: { "@id": MAIN_ORG_ID },
+                    areaServed: SERVICE_AREA,
+                  },
+                })),
+              },
             },
             {
               "@type": "Organization",
