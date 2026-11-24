@@ -539,15 +539,6 @@ export interface Client {
 
 export const CLIENTS: Client[] = [
   {
-    name: "Automotive Creations",
-    initials: "AC",
-    brandColor: "#1D4ED8",
-    industry: "Auto detailing & restoration",
-    outcome: "24/7 voice agent answers every call and books jobs straight to the calendar.",
-    services: ["Voice Agents", "Website Development", "SEO"],
-    url: "https://automotivecreations.lovable.app",
-  },
-  {
     name: "WaxFactory",
     initials: "WF",
     brandColor: "#8B6A1E",

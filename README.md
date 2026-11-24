@@ -19,7 +19,7 @@ Page Sections:
 Each card should have: icon, title, description, 3 key features listed with checkmarks
 	4.	Social Proof Section - “Companies We’ve Transformed” headline + Grid of clickable client logos
 	•	Each logo card shows: company name, 2-3 services provided, clickable link to their website
-	•	Use initials (e.g., “AC” for Automotive Creations) with company brand color background
+	•	Use initials (e.g., “WF” for WaxFactory) with company brand color background
 	•	Hover effect that brightens the card and shows arrow
 	•	Include at least 3 placeholder logos (we’ll customize with real clients)
 	5.	Bottom CTA - “Ready to Deploy?” section with gradient background + 2 buttons (Schedule Discovery, Send Requirements)
