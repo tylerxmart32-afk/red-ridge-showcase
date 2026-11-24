@@ -16,7 +16,7 @@ import { AUDITS_ORDER_URL, CONTACT, ONE_TIME_AUDITS, SERVICES } from "@/data/sit
 
 const TITLE = "Red Ridge AI Portfolio: Live AI Agents for NJ Businesses";
 const DESCRIPTION =
-  "See 7 live client systems built by Red Ridge AI in Branchburg, NJ: 24/7 AI voice agents, virtual assistants and websites. Talk to our AI agent now.";
+  "See 6 live client systems built by Red Ridge AI in Branchburg, NJ: 24/7 AI voice agents, virtual assistants and websites. Talk to our AI agent now.";
 const SITE = "https://redridgeagency.com";
 const MAIN_SITE = "https://www.redridgeai.com";
 const MAIN_ORG_ID = `${MAIN_SITE}/#organization`;

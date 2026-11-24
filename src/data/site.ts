@@ -72,7 +72,7 @@ export const HERO = {
   headline: "Never miss another call.",
   headlineAccent: "See it working for real New Jersey businesses.",
   subhead:
-    "We build 24/7 AI voice agents, virtual assistants and websites that answer every call, qualify the lead and book the job on your calendar. Seven client systems are live right now. Start with $0 setup: you don't pay until it books you a job.",
+    "We build 24/7 AI voice agents, virtual assistants and websites that answer every call, qualify the lead and book the job on your calendar. Six client systems are live right now. Start with $0 setup: you don't pay until it books you a job.",
   primaryCta: "Talk to Our AI Agent Now",
   demoCta: "Book a Free 15-Minute Demo",
 } as const;
@@ -124,7 +124,7 @@ export const PARTNERSHIP = {
 export const HERO_STATS: { value: string; label: string }[] = [
   { value: "24/7", label: "Automated coverage" },
   { value: "5+", label: "Years shipping AI systems" },
-  { value: "7", label: "Live client systems" }, // keep equal to CLIENTS.length (the hero strip counts CLIENTS)
+  { value: "6", label: "Live client systems" }, // keep equal to CLIENTS.length (the hero strip counts CLIENTS)
   { value: "4", label: "Flagship platforms built" },
   { value: "32", label: "Concept builds" }, // keep equal to DEMOS.length (the gallery heading shows the same count)
 ];
