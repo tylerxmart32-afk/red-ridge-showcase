@@ -70,7 +70,7 @@ export function HeroSection() {
                 </span>
               ))}
             </span>
-            <span>{CLIENTS.length} live client systems →</span>
+            <span>live client systems →</span>
           </a>
 
           <dl className="mt-8 grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-border bg-border lg:grid-cols-4">
